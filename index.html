@@ -173,6 +173,95 @@
             80%, 100% { content: '...'; }
         }
         
+        /* Tic Tac Toe Styles */
+        .game-toggle {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .game-toggle:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .game-container {
+            display: none;
+            margin: 2rem 0;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .game-container.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .game-board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 5px;
+            max-width: 250px;
+            margin: 1rem auto;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 15px;
+        }
+        
+        .cell {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            border-radius: 10px;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(5px);
+        }
+        
+        .cell:hover:not(:disabled) {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.05);
+        }
+        
+        .cell:disabled {
+            cursor: not-allowed;
+        }
+        
+        .game-status {
+            font-size: 1.1rem;
+            margin: 1rem 0;
+            font-weight: bold;
+        }
+        
+        .reset-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .reset-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
         @media (max-width: 768px) {
             .maintenance-container {
                 padding: 2rem 1.5rem;
@@ -185,6 +274,16 @@
             
             .maintenance-icon {
                 font-size: 4rem;
+            }
+            
+            .cell {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+            }
+            
+            .game-board {
+                max-width: 200px;
             }
         }
     </style>
@@ -203,7 +302,149 @@
             </div>
         </div>
         
+        <button class="game-toggle" onclick="toggleGame()">🎮 Play Tic Tac Toe while you wait!</button>
+        
+        <div class="game-container" id="gameContainer">
+            <div class="game-status" id="gameStatus">Your turn! (X)</div>
+            <div class="game-board" id="gameBoard"></div>
+            <button class="reset-btn" onclick="resetGame()">New Game</button>
+        </div>
+        
         <p class="signature">Thank you for your patience! - Rhey</p>
     </div>
+
+    <script>
+        let board = ['', '', '', '', '', '', '', '', ''];
+        let currentPlayer = 'X';
+        let gameActive = true;
+        
+        const winPatterns = [
+            [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
+            [0, 3, 6], [1, 4, 7], [2, 5, 8], // columns
+            [0, 4, 8], [2, 4, 6] // diagonals
+        ];
+        
+        function toggleGame() {
+            const container = document.getElementById('gameContainer');
+            const toggle = document.querySelector('.game-toggle');
+            
+            if (container.classList.contains('active')) {
+                container.classList.remove('active');
+                toggle.textContent = '🎮 Play Tic Tac Toe while you wait!';
+            } else {
+                container.classList.add('active');
+                toggle.textContent = '🎮 Hide Game';
+                initGame();
+            }
+        }
+        
+        function initGame() {
+            const gameBoard = document.getElementById('gameBoard');
+            gameBoard.innerHTML = '';
+            
+            for (let i = 0; i < 9; i++) {
+                const cell = document.createElement('button');
+                cell.classList.add('cell');
+                cell.setAttribute('data-index', i);
+                cell.addEventListener('click', handleCellClick);
+                gameBoard.appendChild(cell);
+            }
+            
+            updateGameStatus();
+        }
+        
+        function handleCellClick(e) {
+            const index = e.target.getAttribute('data-index');
+            
+            if (board[index] !== '' || !gameActive) return;
+            
+            board[index] = currentPlayer;
+            e.target.textContent = currentPlayer;
+            e.target.disabled = true;
+            
+            if (checkWin()) {
+                document.getElementById('gameStatus').textContent = `${currentPlayer} wins! 🎉`;
+                gameActive = false;
+                disableAllCells();
+                return;
+            }
+            
+            if (board.every(cell => cell !== '')) {
+                document.getElementById('gameStatus').textContent = "It's a tie! 🤝";
+                gameActive = false;
+                return;
+            }
+            
+            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+            updateGameStatus();
+            
+            if (currentPlayer === 'O' && gameActive) {
+                setTimeout(computerMove, 500);
+            }
+        }
+        
+        function computerMove() {
+            const emptyCells = board.map((cell, index) => cell === '' ? index : null).filter(val => val !== null);
+            
+            if (emptyCells.length === 0 || !gameActive) return;
+            
+            const randomIndex = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+            const cell = document.querySelector(`[data-index="${randomIndex}"]`);
+            
+            board[randomIndex] = 'O';
+            cell.textContent = 'O';
+            cell.disabled = true;
+            
+            if (checkWin()) {
+                document.getElementById('gameStatus').textContent = "Computer wins! 🤖";
+                gameActive = false;
+                disableAllCells();
+                return;
+            }
+            
+            if (board.every(cell => cell !== '')) {
+                document.getElementById('gameStatus').textContent = "It's a tie! 🤝";
+                gameActive = false;
+                return;
+            }
+            
+            currentPlayer = 'X';
+            updateGameStatus();
+        }
+        
+        function checkWin() {
+            return winPatterns.some(pattern => {
+                return pattern.every(index => {
+                    return board[index] === currentPlayer;
+                });
+            });
+        }
+        
+        function updateGameStatus() {
+            if (gameActive) {
+                const status = currentPlayer === 'X' ? "Your turn! (X)" : "Computer's turn... (O)";
+                document.getElementById('gameStatus').textContent = status;
+            }
+        }
+        
+        function disableAllCells() {
+            document.querySelectorAll('.cell').forEach(cell => {
+                cell.disabled = true;
+            });
+        }
+        
+        function resetGame() {
+            board = ['', '', '', '', '', '', '', '', ''];
+            currentPlayer = 'X';
+            gameActive = true;
+            
+            document.querySelectorAll('.cell').forEach(cell => {
+                cell.textContent = '';
+                cell.disabled = false;
+            });
+            
+            updateGameStatus();
+        }
+    </script>
 </body>
 </html>
