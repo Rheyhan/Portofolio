@@ -172,6 +172,28 @@
             60% { content: '..'; }
             80%, 100% { content: '...'; }
         }
+
+        /* Old Portfolio Link */
+        .old-portfolio-link {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 1rem;
+            margin: 1rem 0;
+            display: inline-block;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .old-portfolio-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            text-decoration: none;
+            color: white;
+        }
         
         /* Tic Tac Toe Styles */
         .game-toggle {
@@ -301,6 +323,8 @@
                 <div class="progress-fill"></div>
             </div>
         </div>
+        
+        <a href="old/index.html" class="old-portfolio-link">📁 View Old Portfolio</a>
         
         <button class="game-toggle" onclick="toggleGame()">🎮 Play Tic Tac Toe while you wait!</button>
         
