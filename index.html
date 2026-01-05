@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="fumo.ico">    
-    <title>Maintenance in Progress</title>
+    <title>Maintenance | System Update</title>
     <style>
+        :root {
+            --bg-body: #0f172a;
+            --bg-card: #1e293b;
+            --bg-input: #334155;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --border: #334155;
+            --success: #10b981;
+            --danger: #ef4444;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,328 +25,263 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(-45deg, #667eea, #764ba2, #667eea, #764ba2);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-            margin: 0;
-            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-body);
+            background-image: radial-gradient(circle at 1px 1px, #334155 1px, transparent 0);
+            background-size: 40px 40px;
+            color: var(--text-main);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            color: white;
-        }
-        
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            padding: 20px;
         }
         
         .maintenance-container {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.15);
-            padding: 4rem 3rem;
-            border-radius: 20px;
-            backdrop-filter: blur(15px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: var(--bg-card);
+            padding: 3rem 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border);
             max-width: 500px;
             width: 100%;
+            text-align: center;
             position: relative;
-            overflow: hidden;
         }
         
-        .maintenance-container::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, #00d4aa, #00d4ff, #667eea, #764ba2);
-            border-radius: 20px;
-            z-index: -1;
-            animation: borderGlow 3s linear infinite;
-        }
-        
-        @keyframes borderGlow {
-            0% { opacity: 0.5; }
-            50% { opacity: 1; }
-            100% { opacity: 0.5; }
-        }
-        
-        .maintenance-icon {
-            font-size: 5rem;
+        /* SVG Icon styling */
+        .icon-svg {
+            width: 64px;
+            height: 64px;
+            fill: var(--accent);
             margin-bottom: 1.5rem;
-            animation: bounce 2s ease-in-out infinite;
-            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
         }
-        
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
-        }
-        
+
         h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            margin-bottom: 1rem;
             font-weight: 700;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            background: linear-gradient(45deg, #ffffff, #f0f0f0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            letter-spacing: -0.025em;
+            color: var(--text-main);
         }
         
         p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             margin-bottom: 1.5rem;
-            opacity: 0.95;
+            color: var(--text-muted);
             line-height: 1.6;
-            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
         }
         
+        /* Progress Bar */
         .progress-container {
-            margin: 3rem 0;
+            margin: 2.5rem 0;
+            text-align: left;
         }
         
-        .progress-label {
-            font-size: 0.9rem;
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
             margin-bottom: 0.5rem;
-            opacity: 0.8;
+            font-size: 0.875rem;
+            color: var(--text-muted);
         }
         
-        .progress-bar {
+        .progress-track {
             width: 100%;
-            height: 12px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
+            height: 8px;
+            background: var(--bg-input);
+            border-radius: 4px;
             overflow: hidden;
-            position: relative;
-            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
         }
         
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #00d4aa, #00d4ff, #00d4aa);
-            background-size: 200% 100%;
+            background-color: var(--accent);
             width: 0%;
-            border-radius: 8px;
-            animation: progress 4s ease-in-out infinite, shimmer 2s linear infinite;
-            position: relative;
+            border-radius: 4px;
+            animation: progressIndeterminate 3s ease-in-out infinite;
         }
         
-        .progress-fill::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            animation: slide 2s linear infinite;
-        }
-        
-        @keyframes progress {
-            0% { width: 0%; }
-            50% { width: 85%; }
-            100% { width: 0%; }
-        }
-        
-        @keyframes shimmer {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 200% 50%; }
-        }
-        
-        @keyframes slide {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-        
-        .signature {
-            margin-top: 2rem;
-            font-style: italic;
-            opacity: 0.8;
-            font-size: 1rem;
-        }
-        
-        .dots {
-            display: inline-block;
-            animation: dots 1.5s linear infinite;
-        }
-        
-        @keyframes dots {
-            0%, 20% { content: ''; }
-            40% { content: '.'; }
-            60% { content: '..'; }
-            80%, 100% { content: '...'; }
+        @keyframes progressIndeterminate {
+            0% { width: 0%; transform: translateX(0); }
+            50% { width: 70%; }
+            100% { width: 0%; transform: translateX(100%); }
         }
 
-        /* Old Portfolio Link */
-        .old-portfolio-link {
-            background: rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-size: 1rem;
-            margin: 1rem 0;
-            display: inline-block;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-        
-        .old-portfolio-link:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-            text-decoration: none;
-            color: white;
-        }
-        
-        /* Tic Tac Toe Styles */
-        .game-toggle {
-            background: rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 25px;
+        /* Buttons & Links */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
             cursor: pointer;
-            font-size: 1rem;
-            margin: 1rem 0;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            transition: all 0.2s ease;
+            text-decoration: none;
+            border: 1px solid transparent;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-main);
+            color: var(--text-main);
+            background: var(--bg-input);
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn-small {
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            width: auto;
+            margin-top: 10px;
+            background-color: var(--bg-input);
+            color: var(--text-muted);
         }
         
-        .game-toggle:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
+        .btn-small:hover {
+            color: var(--text-main);
+            background-color: #475569;
         }
-        
+
+        /* Tic Tac Toe */
         .game-container {
             display: none;
-            margin: 2rem 0;
-            animation: fadeIn 0.5s ease-in-out;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            animation: slideDown 0.3s ease-out;
         }
         
         .game-container.active {
             display: block;
         }
-        
-        @keyframes fadeIn {
+
+        @keyframes slideDown {
             from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
         }
         
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .game-status {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
         .game-board {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-gap: 5px;
-            max-width: 250px;
-            margin: 1rem auto;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px;
-            border-radius: 15px;
+            gap: 8px;
+            background-color: var(--bg-body);
+            padding: 8px;
+            border-radius: 8px;
+            margin: 0 auto;
+            max-width: 260px;
         }
         
         .cell {
-            width: 70px;
-            height: 70px;
-            background: rgba(255, 255, 255, 0.3);
-            border: none;
-            border-radius: 10px;
+            aspect-ratio: 1;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 4px;
             font-size: 2rem;
-            font-weight: bold;
-            color: white;
+            font-weight: 700;
+            color: var(--text-main);
             cursor: pointer;
-            transition: all 0.2s ease;
-            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
         }
         
         .cell:hover:not(:disabled) {
-            background: rgba(255, 255, 255, 0.4);
-            transform: scale(1.05);
+            background-color: var(--bg-input);
         }
         
         .cell:disabled {
-            cursor: not-allowed;
+            cursor: default;
+        }
+
+        .cell[data-value="X"] { color: var(--accent); }
+        .cell[data-value="O"] { color: var(--danger); }
+        
+        .signature {
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            opacity: 0.6;
         }
         
-        .game-status {
-            font-size: 1.1rem;
-            margin: 1rem 0;
-            font-weight: bold;
-        }
-        
-        .reset-btn {
-            background: rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-        
-        .reset-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-        
-        @media (max-width: 768px) {
+        /* Mobile adjustment */
+        @media (max-width: 480px) {
             .maintenance-container {
                 padding: 2rem 1.5rem;
-                margin: 10px;
-            }
-            
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            .maintenance-icon {
-                font-size: 4rem;
-            }
-            
-            .cell {
-                width: 60px;
-                height: 60px;
-                font-size: 1.8rem;
-            }
-            
-            .game-board {
-                max-width: 200px;
             }
         }
     </style>
 </head>
 <body>
     <div class="maintenance-container">
-        <div class="maintenance-icon">🔧</div>
-        <h1>Maintenance in Progress</h1>
-        <p>I'm working hard to make my portfolio up to date and looks better for you!</p>
-        <p>Please check back soon while I update everything to be more current<span class="dots"></span></p>
+        <svg class="icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+        </svg>
+
+        <h1>System Maintenance</h1>
+        <p>I am currently updating the portfolio to improve performance and design. Access will be restored shortly.</p>
         
         <div class="progress-container">
-            <div class="progress-label">Updating content...</div>
-            <div class="progress-bar">
+            <div class="progress-header">
+                <span>Status</span>
+                <span>Updating...</span>
+            </div>
+            <div class="progress-track">
                 <div class="progress-fill"></div>
             </div>
         </div>
         
-        <a href="OLD/index" class="old-portfolio-link">📁 View Old Portfolio (Last updated: Aug 2024)</a>
+        <a href="OLD/index" class="btn btn-outline">
+            View Archived Portfolio (Aug 2024)
+        </a>
         
-        <button class="game-toggle" onclick="toggleGame()">🎮 Play Tic Tac Toe while you wait!</button>
+        <button class="btn btn-primary" onclick="toggleGame()">
+            <span id="toggleText">Play Minigame</span>
+        </button>
         
         <div class="game-container" id="gameContainer">
-            <div class="game-status" id="gameStatus">Your turn! (X)</div>
+            <div class="game-header">
+                <div class="game-status" id="gameStatus">Player Turn (X)</div>
+                <button class="btn btn-small" onclick="resetGame()">Reset Board</button>
+            </div>
             <div class="game-board" id="gameBoard"></div>
-            <button class="reset-btn" onclick="resetGame()">New Game</button>
         </div>
         
-        <p class="signature">Thank you for your patience! - Rhey</p>
+        <p class="signature">&copy; 2026 Rhey. All rights reserved.</p>
     </div>
 
     <script>
@@ -343,22 +290,25 @@
         let gameActive = true;
         
         const winPatterns = [
-            [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
-            [0, 3, 6], [1, 4, 7], [2, 5, 8], // columns
-            [0, 4, 8], [2, 4, 6] // diagonals
+            [0, 1, 2], [3, 4, 5], [6, 7, 8],
+            [0, 3, 6], [1, 4, 7], [2, 5, 8],
+            [0, 4, 8], [2, 4, 6]
         ];
         
         function toggleGame() {
             const container = document.getElementById('gameContainer');
-            const toggle = document.querySelector('.game-toggle');
+            const toggleText = document.getElementById('toggleText');
             
             if (container.classList.contains('active')) {
                 container.classList.remove('active');
-                toggle.textContent = '🎮 Play Tic Tac Toe while you wait!';
+                toggleText.textContent = 'Play Minigame';
             } else {
                 container.classList.add('active');
-                toggle.textContent = '🎮 Hide Game';
-                initGame();
+                toggleText.textContent = 'Close Minigame';
+                // Only init if empty to preserve state, or init if you want fresh start every toggle
+                if(document.getElementById('gameBoard').innerHTML === '') {
+                    initGame();
+                }
             }
         }
         
@@ -384,17 +334,19 @@
             
             board[index] = currentPlayer;
             e.target.textContent = currentPlayer;
+            e.target.setAttribute('data-value', currentPlayer); // For CSS coloring
             e.target.disabled = true;
             
             if (checkWin()) {
-                document.getElementById('gameStatus').textContent = `${currentPlayer} wins! 🎉`;
+                document.getElementById('gameStatus').textContent = `${currentPlayer} Wins`;
+                document.getElementById('gameStatus').style.color = 'var(--success)';
                 gameActive = false;
                 disableAllCells();
                 return;
             }
             
             if (board.every(cell => cell !== '')) {
-                document.getElementById('gameStatus').textContent = "It's a tie! 🤝";
+                document.getElementById('gameStatus').textContent = "Draw";
                 gameActive = false;
                 return;
             }
@@ -403,7 +355,7 @@
             updateGameStatus();
             
             if (currentPlayer === 'O' && gameActive) {
-                setTimeout(computerMove, 500);
+                setTimeout(computerMove, 400);
             }
         }
         
@@ -417,17 +369,19 @@
             
             board[randomIndex] = 'O';
             cell.textContent = 'O';
+            cell.setAttribute('data-value', 'O');
             cell.disabled = true;
             
             if (checkWin()) {
-                document.getElementById('gameStatus').textContent = "Computer wins! 🤖";
+                document.getElementById('gameStatus').textContent = "System Wins";
+                document.getElementById('gameStatus').style.color = 'var(--danger)';
                 gameActive = false;
                 disableAllCells();
                 return;
             }
             
             if (board.every(cell => cell !== '')) {
-                document.getElementById('gameStatus').textContent = "It's a tie! 🤝";
+                document.getElementById('gameStatus').textContent = "Draw";
                 gameActive = false;
                 return;
             }
@@ -446,8 +400,10 @@
         
         function updateGameStatus() {
             if (gameActive) {
-                const status = currentPlayer === 'X' ? "Your turn! (X)" : "Computer's turn... (O)";
-                document.getElementById('gameStatus').textContent = status;
+                const status = currentPlayer === 'X' ? "Player Turn (X)" : "System Thinking...";
+                const statusEl = document.getElementById('gameStatus');
+                statusEl.textContent = status;
+                statusEl.style.color = 'var(--text-main)';
             }
         }
         
@@ -464,6 +420,7 @@
             
             document.querySelectorAll('.cell').forEach(cell => {
                 cell.textContent = '';
+                cell.removeAttribute('data-value'); // Remove color styling
                 cell.disabled = false;
             });
             
