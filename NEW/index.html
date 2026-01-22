@@ -88,7 +88,7 @@
     <!--==================== MAIN ====================-->
     <main class="main">
         <!--==================== HOME ====================-->
-        <section class="home section" id="home">
+        <section class="home_section" id="home">
             <div data-aos="fade-left" class="home__container container grid">
                 <div class="home__content grid">
 
@@ -132,14 +132,18 @@
                     </div>
 
                     <div class="home__data">
-                        <h1 class="home_title">Hi!<span class="wave">👋</span>, I'm Rhey</h1>
+                        <h1 class="home_title">Hi, I'm Rhey!<span class="wave">👋</span></h1>
                         <h3 class="home__subtitle">
                             and I<span class="auto-input"></span>
                         </h3>
                         <p class="home__description">
-                            Mid level experience in machine learning related stuffs, producing quality work.
+                            I'm a data scientist with a passion on automating data workflows and building AI powered applications.
+                            <span class="home__location">
+                                <span class="home__location-flag" aria-hidden="true"></span>
+                                Jakarta, Indonesia
+                            </span>
                         </p>
-                        <a href="#contact" class="button button--flex">
+                        <a href="mailto:rheyhanfahry@gmail.com" class="button button--flex">
                             Contact Me <i class="uil uil-message button__icon"></i>
                         </a>
                     </div>
@@ -161,20 +165,59 @@
             <span class="section__subtitle"> Who I really am?</span>
 
             <div data-aos="fade-left" class="about__container container grid">
-                <img src="assets/img/about.png" alt="" class="about__img" />
+                <div class="about__media">
+                    <div class="about__image-wrap">
+                        <img src="assets/img/about.png" alt="Rheyhan portrait" class="about__img" />
+                    </div>
+
+                    <div class="about__cards">
+                        <article class="about__card">
+                            <i class="uil uil-brain about__card-icon"></i>
+                            <div>
+                                <h3 class="about__card-title">AI / ML</h3>
+                                <span class="about__card-subtitle">Computer Vision + NLP</span>
+                            </div>
+                        </article>
+                        <article class="about__card">
+                            <i class="uil uil-cloud about__card-icon"></i>
+                            <div>
+                                <h3 class="about__card-title">Cloud</h3>
+                                <span class="about__card-subtitle">AWS &amp; GCP</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
 
                 <div class="about__data">
+                    <p class="about__eyebrow">Curious builder</p>
+                    <h3 class="about__headline">Turning data into useful, reliable products.</h3>
                     <p class="about__description">
-                        Hi, I'm Rheyhan. I'm 22 Years old. Whenever I get free time, 
-                        I like to learn new things and do some silly stuffs. I have a strong passion for technology and coding, driven by the desire of pursuing knowledge on how computers could perceive and think like human does.
-                        <br><br>
-                        Skills that i possess in my arsenal are Selenium and BeautifulSoup for data mining, CV2 and PIL for image processing, TF and PyTorch for deep learning, and scikit-learn for machine learning. Also skilled in AWS and GCP for cloud computing needs.
-                        My project priorities are always ensuring clean, factual & reliable for the product I'm working on.
+                        Hi, I'm Rheyhan. I'm 22 years old. Whenever I get free time, I like to learn new things and do some silly stuff.
+                        I have a strong passion for technology and coding, driven by the desire to learn how computers could perceive and think like humans do.
                     </p>
+
+                    <ul class="about__highlights">
+                        <li><i class="uil uil-check-circle"></i> Data mining with Selenium + BeautifulSoup.</li>
+                        <li><i class="uil uil-check-circle"></i> Image processing with CV2 + PIL.</li>
+                        <li><i class="uil uil-check-circle"></i> Deep learning with TensorFlow + PyTorch.</li>
+                        <li><i class="uil uil-check-circle"></i> Machine learning with scikit-learn.</li>
+                    </ul>
+
+                    <div class="about__chips">
+                        <span class="about__chip">AWS</span>
+                        <span class="about__chip">GCP</span>
+                        <span class="about__chip">ML Ops</span>
+                        <span class="about__chip">Data Ops</span>
+                    </div>
+
                     <div class="about__buttons">
                         <a download="" href="assets/pdf/rheyhan-fahry-resume.pdf" class="button button--flex">
                             Professional Résumé<i class="uil uil-download-alt button__icon"></i>
                         </a>
+                        <a href="#portfolio" class="button button--flex button--ghost">
+                            View Projects<i class="uil uil-arrow-right button__icon"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
