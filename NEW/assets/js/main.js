@@ -2,11 +2,110 @@
 const navMenu = document.getElementById('nav-menu'),
     navToggle = document.getElementById('nav-toggle'),
     navClose = document.getElementById('nav-close')
+
+const playMenuSound = (type = 'open') => {
+    const AudioCtx = window.AudioContext || window.webkitAudioContext
+    if (!AudioCtx) return
+
+    try {
+        const ctx = new AudioCtx()
+        const oscillator = ctx.createOscillator()
+        const gainNode = ctx.createGain()
+
+        oscillator.type = 'triangle'
+        oscillator.frequency.value = type === 'open' ? 620 : 420
+        gainNode.gain.setValueAtTime(0, ctx.currentTime)
+        gainNode.gain.linearRampToValueAtTime(0.08, ctx.currentTime + 0.01)
+        gainNode.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.12)
+
+        oscillator.connect(gainNode)
+        gainNode.connect(ctx.destination)
+
+        oscillator.start()
+        oscillator.stop(ctx.currentTime + 0.13)
+
+        oscillator.onended = () => {
+            ctx.close()
+        }
+    } catch (error) {
+        // Ignore audio errors
+    }
+}
+
+/*==================== MUSIC TOGGLE ====================*/
+const musicToggle = document.getElementById('music-toggle')
+let musicTracks = []
+const musicPlayer = new Audio()
+musicPlayer.preload = 'none'
+
+const loadMusicManifest = async () => {
+    try {
+        const response = await fetch('assets/music/manifest.json', { cache: 'no-store' })
+        if (!response.ok) return
+        const data = await response.json()
+        if (Array.isArray(data)) {
+            musicTracks = data
+        }
+    } catch (error) {
+        // Ignore manifest errors
+    }
+}
+
+const getRandomTrack = () => {
+    if (!musicTracks.length) return null
+    const index = Math.floor(Math.random() * musicTracks.length)
+    return `assets/music/${musicTracks[index]}`
+}
+
+const updateMusicState = (isPlaying) => {
+    if (!musicToggle) return
+    musicToggle.classList.toggle('is-playing', isPlaying)
+    musicToggle.setAttribute('aria-label', isPlaying ? 'Pause music' : 'Play random music')
+}
+
+if (musicToggle) {
+    loadMusicManifest()
+
+    musicToggle.addEventListener('click', async () => {
+        if (!musicTracks.length) {
+            await loadMusicManifest()
+        }
+
+        if (musicPlayer.paused) {
+            const randomTrack = getRandomTrack()
+            if (!randomTrack) return
+            musicPlayer.src = randomTrack
+            musicPlayer.currentTime = 0
+            try {
+                await musicPlayer.play()
+                updateMusicState(true)
+            } catch (error) {
+                updateMusicState(false)
+            }
+        } else {
+            musicPlayer.pause()
+            musicPlayer.currentTime = 0
+            musicPlayer.src = ''
+            updateMusicState(false)
+        }
+    })
+
+    musicPlayer.addEventListener('ended', () => {
+        const nextTrack = getRandomTrack()
+        if (!nextTrack) {
+            updateMusicState(false)
+            return
+        }
+        musicPlayer.src = nextTrack
+        musicPlayer.play().catch(() => updateMusicState(false))
+    })
+}
 /*===== MENU SHOW =====*/
 /* Validate if constant exists */
 if (navToggle) {
     navToggle.addEventListener('click', () => {
         navMenu.classList.add('show-menu')
+        playMenuSound('open')
     })
 }
 
@@ -15,6 +114,7 @@ if (navToggle) {
 if (navClose) {
     navClose.addEventListener('click', () => {
         navMenu.classList.remove('show-menu')
+        playMenuSound('close')
     })
 }
 
@@ -25,6 +125,7 @@ function linkAction() {
     const navMenu = document.getElementById('nav-menu')
     // When we click on each nav__link, we remove the show-menu class
     navMenu.classList.remove('show-menu')
+    playMenuSound('close')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 /*==================== ACCORDION SKILLS ====================*/
@@ -127,6 +228,10 @@ let certPortfolio = new Swiper('.cert__container', {
     pagination: {
         el: '.swiper-pagination.cert__pagination',
         type: 'fraction',
+    },
+    navigation: {
+        nextEl: '.cert__nav-next',
+        prevEl: '.cert__nav-prev',
     },
 });
 
@@ -275,18 +380,49 @@ const selectedIcon = localStorage.getItem('selected-icon')
 const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
 const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun'
 
-// We validate if the user previously chose a topic
-if (selectedTheme) {
-  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
-  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
-  themeButton.classList[selectedIcon === 'uil-moon' ? 'add' : 'remove'](iconTheme)
+const playSwitchSound = () => {
+    const AudioCtx = window.AudioContext || window.webkitAudioContext
+    if (!AudioCtx) return
+
+    try {
+        const ctx = new AudioCtx()
+        const oscillator = ctx.createOscillator()
+        const gainNode = ctx.createGain()
+
+        oscillator.type = 'square'
+        oscillator.frequency.setValueAtTime(520, ctx.currentTime)
+        oscillator.frequency.exponentialRampToValueAtTime(360, ctx.currentTime + 0.08)
+
+        gainNode.gain.setValueAtTime(0, ctx.currentTime)
+        gainNode.gain.linearRampToValueAtTime(0.09, ctx.currentTime + 0.008)
+        gainNode.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.12)
+
+        oscillator.connect(gainNode)
+        gainNode.connect(ctx.destination)
+
+        oscillator.start()
+        oscillator.stop(ctx.currentTime + 0.12)
+
+        oscillator.onended = () => {
+            ctx.close()
+        }
+    } catch (error) {
+        // Ignore audio errors
+    }
 }
+
+// Force light theme on load
+document.body.classList.remove(darkTheme)
+themeButton.classList.remove(iconTheme)
+localStorage.setItem('selected-theme', 'light')
+localStorage.setItem('selected-icon', 'uil-moon')
 
 // Activate / deactivate the theme manually with the button
 themeButton.addEventListener('click', () => {
     // Add or remove the dark / icon theme
     document.body.classList.toggle(darkTheme)
     themeButton.classList.toggle(iconTheme)
+    playSwitchSound()
     // We save the theme and the current icon that the user chose
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
