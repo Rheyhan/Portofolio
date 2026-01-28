@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="I'm Rhey, and this is my personal portfolio website..">
+    <meta name="keywords" content="Rhey, Rheyhan Fahry, Rhey ">
+
+    <!--==================== UNICONS ====================-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+
+    <!--==================== SWIPER CSS ====================-->
+    <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <title>Rhey's Portfolio</title>
+
+    <!--==================== Favicon ====================-->
+    <link rel="shortcut icon" href="assets/img/Icon.png" type="image/png">
+
+    <!--==================== Animate on scroll CDN ====================-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+</head>
+
+<body>
+    
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Who am i?</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__items">
+                        <a href="index.html" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+
+                    <li class="nav__items">
+                        <a href="about.html" class="nav__link ">
+                            <i class="uil uil-user nav__icon"></i> About
+                        </a>
+                    </li>
+
+                    <li class="nav__items">
+                        <a href="portfolio.html" class="nav__link ">
+                            <i class="uil uil-briefcase-alt nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!--Theme Change button-->
+
+                <button class="nav__music" id="music-toggle" type="button" aria-label="Play random music">
+                    <i class="uil uil-music"></i>
+                </button>
+
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+                
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <!--==================== HOME ====================-->
+        <section class="home section" id="home">
+            <div data-aos="fade-left" class="home__container container grid">
+                <div class="home__content grid">
+                    <!--==================== SOCIAL MEDIA ====================-->
+                    <div class="home__social">
+                        <a href="https://github.com/Rheyhan" target="_blank" class="home__social-icon">
+                            <i class="uil uil-github-alt"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/rheyhan-fahry/" target="_blank" class="home__social-icon">
+                            <i class="uil uil-linkedin-alt"></i>
+                        </a>
+                        <a href="https://www.instagram.com/rheyhan.fahry/"
+                            target="_blank" class="home__social-icon">
+                            <i class="uil uil-instagram"></i>
+                        </a>
+                    </div>
+
+                    <div data-aos="fade-right" class="home__img">
+                        <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <mask id="mask0" mask-type="alpha">
+                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
+                                130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
+                                97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
+                                0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
+                            </mask>
+                            <g mask="url(#mask0)">
+                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
+                                165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
+                                129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
+                                -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
+
+                                <image class="home__blob-img" x="12" y="18" href="assets/img/perfil.png" />
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div class="home__data">
+                        <h1 class="home_title">Hi, I'm Rhey!<span class="wave">👋</span></h1>
+                        <h3 class="home__subtitle">
+                            and I<span class="auto-input"></span>
+                        </h3>
+                        <p class="home__description">
+                            I'm a data scientist with a passion on automating data workflows and building AI powered applications.
+                            <span class="home__location">
+                                <span class="home__location-flag" aria-hidden="true"></span>
+                                Jakarta, Indonesia
+                            </span>
+                        </p>
+                        <a href="mailto:rheyhanfahry@gmail.com" class="button button--flex">
+                            Contact Me <i class="uil uil-message button__icon"></i>
+                        </a>
+                        <a href="assets/resume.pdf" class="button button--flex button--ghost" target="_blank" rel="noopener">
+                            Resume <i class="uil uil-file-alt button__icon"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="home__scroll">
+                    <a href="#about" class="home__scroll-button button--flex">
+                        <i class="uil uil-mouse-alt home__scroll-mouse"></i>
+                        <span class="home__scroll-name"> Scroll down</span>
+                        <i class="uil uil-arrow-down home__scroll-arrow"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!--==================== PROFESSIONAL EXPERIENCES ====================-->
+        <section class="services section" id="experience">
+            <h2 class="section__title" data-aos="fade-up">Professional Experiences</h2>
+            <span class="section__subtitle" data-aos="fade-up">I left my footprints into places!</span>
+
+            <div class="experience__container swiper container" data-aos="fade-up">
+                
+                <div class="swiper-wrapper">
+                    <!--==================== Experience 1 ====================-->
+                    <a href="https://outlier.ai/" target="_blank" class="experience__content swiper-slide">
+                        <div>
+                            <img src="assets/img/WorkExperiences/Outliers.png" alt="Outliers Logo" class="experience__img">
+                            
+                            <h3 class="services__title">AI Trainer<br> [Remote]</h3>
+                            
+                            <span class="experience__date">Dec 2024 - Present</span>
+
+                            <div class="experience__techs">
+                                <span class="experience__tag">RLHF</span>
+                                <span class="experience__tag">Prompting</span>
+                            </div>
+                        </div>
+                    </a>
+                    <!--==================== Experience 2 ====================-->
+                    <a href="https://rpn.co.id/beta/" target="_blank" class="experience__content swiper-slide">
+                        <div>
+                            <img src="assets/img/WorkExperiences/RPN.png" alt="RPN Logo" class="experience__img">
+                            
+                            <h3 class="services__title">Computer <br> Vision Engineer</h3>
+                            
+                            <span class="experience__date">Mar 2025 - Apr 2025</span>
+
+                            <div class="experience__techs">
+                                <span class="experience__tag">Selenium</span>
+                                <span class="experience__tag">GCP</span>
+                                <span class="experience__tag">Tensorflow</span>
+                                <span class="experience__tag">Ultralytics</span>
+                                <span class="experience__tag">Roboflow</span>
+                            </div>
+                        </div>
+                    </a>
+                    <!--==================== Experience 3 ====================-->
+                    <a href="https://xquisite.ai" target="_blank" class="experience__content swiper-slide">
+                        <div>
+                            <img src="assets/img/WorkExperiences/xquisite.png" alt="Xquisite Logo" class="experience__img">
+                            
+                            <h3 class="services__title">Data Analyst <br> Intern </h3>
+                            
+                            <span class="experience__date">Sep 2024 - Dec 2024</span>
+
+                            <div class="experience__techs">
+                                <span class="experience__tag">Transformers</span>
+                                <span class="experience__tag">CVAT</span>
+                                <span class="experience__tag">Scikit-learn</span>
+                                <span class="experience__tag">Ultralytics</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!--==================== Experience 4 ====================-->
+                    <a href="https://www.garmentopal.com/en/business/financing.php" target="_blank" class="experience__content swiper-slide">
+                        <div>
+                            <img src="assets/img/WorkExperiences/Opal.png" alt="Opal Logo" class="experience__img">
+                            
+                            <h3 class="services__title">Data Entry <br> Assistant </h3>
+                            
+                            <span class="experience__date">Feb 2022 - Aug 2023</span>
+
+                            <div class="experience__techs">
+                                <span class="experience__tag">Excel</span>
+                                <span class="experience__tag">VBA</span>
+                            </div>
+                        </div>
+                    </a>
+
+                </div> <div class="swiper-pagination experience__pagination"></div>
+            </div>
+        </section>
+        
+        <!--==================== SKILLS ====================-->
+        <section class="skills section" id="skills">
+            <h2 class="section__title">Skills</h2>
+            <span class="section__subtitle">Core skills and tools I can use.</span>
+
+            <div data-aos="fade-up" class="skills__simple container">
+                <div class="skills__chips">
+                    <a class="skills__chip" href="https://www.python.org/" target="_blank" rel="noopener" data-tooltip="Programming Language">
+                        <img src="assets/img/Skills/python.png" alt="Python" class="skills__chip-icon" />
+                        <span>Python</span>
+                    </a>
+                    <a class="skills__chip" href="https://www.lua.org/" target="_blank" rel="noopener" data-tooltip="Programming Language">
+                        <img src="assets/img/Skills/Lua.svg" alt="Lua" class="skills__chip-icon" />
+                        <span>Lua</span>
+                    </a>
+                    <a class="skills__chip" href="https://www.r-project.org/" target="_blank" rel="noopener" data-tooltip="Statistical Computing">
+                        <img src="assets/img/Skills/R.png" alt="R" class="skills__chip-icon" />
+                        <span>R</span>
+                    </a>
+                    <a class="skills__chip" href="https://www.postgresql.org/" target="_blank" rel="noopener" data-tooltip="Database Query Language">
+                        <img src="assets/img/Skills/SQL.png" alt="SQL" class="skills__chip-icon" />
+                        <span>SQL</span>
+                    </a>
+                    <a class="skills__chip" href="https://www.sas.com/" target="_blank" rel="noopener" data-tooltip="Analytics Software">
+                        <img src="assets/img/Skills/SAS.svg" alt="SAS" class="skills__chip-icon" />
+                        <span>SAS</span>
+                    </a>
+                    <a class="skills__chip" href="https://isocpp.org/" target="_blank" rel="noopener" data-tooltip="Programming Language">
+                        <img src="assets/img/Skills/cpp.svg" alt="C++" class="skills__chip-icon" />
+                        <span>C++</span>
+                    </a>
+                    <a class="skills__chip" href="https://en.cppreference.com/w/c" target="_blank" rel="noopener" data-tooltip="Programming Language">
+                        <img src="assets/img/Skills/C.png" alt="C" class="skills__chip-icon" />
+                        <span>C</span>
+                    </a>
+                    <a class="skills__chip" href="https://www.gnu.org/software/bash/" target="_blank" rel="noopener" data-tooltip="Shell Scripting">
+                        <img src="assets/img/Skills/bash.png" alt="Bash" class="skills__chip-icon" />
+                        <span>Bash</span>
+                    </a>
+                    <a class="skills__chip" href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener" data-tooltip="Web Markup Language">
+                        <img src="assets/img/Skills/html.png" alt="HTML" class="skills__chip-icon" />
+                        <span>HTML</span>
+                    </a>
+                    <a class="skills__chip" href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener" data-tooltip="Styling Language">
+                        <img src="assets/img/Skills/css.png" alt="CSS" class="skills__chip-icon" />
+                        <span>CSS</span>
+                    </a>
+                    <a class="skills__chip" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener" data-tooltip="Programming Language">
+                        <img src="assets/img/Skills/javascript.png" alt="JavaScript" class="skills__chip-icon" />
+                        <span>JavaScript</span>
+                    </a>
+                    <a class="skills__chip" href="https://www.microsoft.com/microsoft-365/excel" target="_blank" rel="noopener" data-tooltip="Spreadsheet Tool">
+                        <img src="assets/img/Skills/Excel.png" alt="Microsoft Excel" class="skills__chip-icon" />
+                        <span>Excel</span>
+                    </a>
+                    <a class="skills__chip" href="https://powerbi.microsoft.com/" target="_blank" rel="noopener" data-tooltip="Data Visualization">
+                        <img src="assets/img/Skills/PowerBI.png" alt="Power BI" class="skills__chip-icon" />
+                        <span>Power BI</span>
+                    </a>
+                    <a class="skills__chip" href="https://www.minitab.com/" target="_blank" rel="noopener" data-tooltip="Statistical Software">
+                        <img src="assets/img/Skills/Minitab.png" alt="Minitab" class="skills__chip-icon" />
+                        <span>Minitab</span>
+                    </a>
+                    <a class="skills__chip" href="https://cloud.google.com/" target="_blank" rel="noopener" data-tooltip="Cloud Platform">
+                        <img src="assets/img/Skills/GCP.png" alt="Google Cloud Platform" class="skills__chip-icon" />
+                        <span>GCP</span>
+                    </a>
+                    <a class="skills__chip" href="https://aws.amazon.com/" target="_blank" rel="noopener" data-tooltip="Cloud Platform">
+                        <img src="assets/img/Skills/aws.png" alt="Amazon Web Services" class="skills__chip-icon" />
+                        <span>AWS</span>
+                    </a>
+                    <a class="skills__chip" href="https://www.adobe.com/products/photoshop.html" target="_blank" rel="noopener" data-tooltip="Image Editor">
+                        <img src="assets/img/Skills/ps.png" alt="Adobe Photoshop" class="skills__chip-icon" />
+                        <span>Photoshop</span>
+                    </a>
+                    <a class="skills__chip" href="https://www.adobe.com/products/premiere.html" target="_blank" rel="noopener" data-tooltip="Video Editor">
+                        <img src="assets/img/Skills/Premiere.png" alt="Adobe Premiere" class="skills__chip-icon" />
+                        <span>Premiere</span>
+                    </a>
+                    <a class="skills__chip" href="https://www.blender.org/" target="_blank" rel="noopener" data-tooltip="3D Modeling">
+                        <img src="assets/img/Skills/blender.png" alt="Blender" class="skills__chip-icon" />
+                        <span>Blender</span>
+                    </a>
+                    <a class="skills__chip" href="https://www.adobe.com/products/illustrator.html" target="_blank" rel="noopener" data-tooltip="Vector Graphics">
+                        <img src="assets/img/Skills/illustrator.png" alt="Adobe Illustrator" class="skills__chip-icon" />
+                        <span>Illustrator</span>
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+        <!--==================== PORTFOLIO ====================-->
+        <section class="portfolio section" id="portfolio">
+            <h2 class="section__title">Recent Projects</h2>
+            <span class="section__subtitle">Footprints I placed!</span>
+
+            <div data-aos="fade-right" class="portfolio__layout container">
+                <div class="portfolio__grid-area">
+                    <div class="portfolio__grid">
+
+                    <!--==================== PORTFOLIO 1 ====================-->
+                    <article class="portfolio__card" data-category="web">
+                        <div class="portfolio__card-img-wrapper">
+                            <img src="/assets/img/portfolio1.jpg" alt="Modern Website" class="portfolio__card-img">
+                        </div>
+
+                        <div class="portfolio__card-body">
+                            <div class="portfolio__card-header">
+                                <h3 class="portfolio__card-title">XScrapers</h3>
+                                <a href="#" class="button button--flex button--small button--outline portfolio__button">
+                                    Discover
+                                    <i class="uil uil-arrow-right button__icon"></i>
+                                </a>
+                            </div>
+                            <p class="portfolio__card-text">Python web scraping tool for data extraction and automation on X (formerly Twitter).</p>
+                            <div class="portfolio__card-techs">
+                                <span class="portfolio__tech">Selenium</span>
+                                <span class="portfolio__tech">Tkinter</span>
+                                <span class="portfolio__tech">webdriver</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!--==================== PORTFOLIO 2 ====================-->
+                    <article class="portfolio__card" data-category="design">
+                        <div class="portfolio__card-img-wrapper">
+                            <img src="/assets/img/portfolio2.jpg" alt="Brand Design" class="portfolio__card-img">
+                        </div>
+
+                        <div class="portfolio__card-body">
+                            <div class="portfolio__card-header">
+                                <h3 class="portfolio__card-title">Fruit Ninja CV Slicer</h3>
+                                <a href="#" class="button button--flex button--small button--outline portfolio__button">
+                                    Discover
+                                    <i class="uil uil-arrow-right button__icon"></i>
+                                </a>
+                            </div>
+                            <p class="portfolio__card-text">A refined computer vision approach on completing Fruit Ninja with fast capture.</p>
+                            <div class="portfolio__card-techs">
+                                <span class="portfolio__tech">OpenCV</span>
+                                <span class="portfolio__tech">dxcam</span>
+                                <span class="portfolio__tech">TensorRT</span>
+                            </div>
+                        </div>
+                    </article>
+                    </div>
+
+                    <a href="portofolio.html" class="portfolio__view-more">View More</a>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== Certificates ====================-->
+        <section class="certificate section">
+            <h2 class="section__title">Certifications</h2>
+            <span class="section__subtitle">Credentials I've earned along the way.</span>
+
+            <div data-aos="fade-up" class="cert__container container swiper-container">
+                <div class="swiper-wrapper">
+
+                    <!--==================== Certificate 1 ====================-->
+                    <article class="cert__card swiper-slide">
+                        <div class="cert__card-img-wrapper">
+                            <img src="/assets/img/Certifications/1.jpg" alt="Quick Start Guide to Large Language Models (LLMs)" class="cert__card-img">
+                            <div class="cert__card-overlay">
+                                <a href="/assets/pdf/1.pdf" target="_blank" rel="noopener" class="cert__preview-btn">
+                                    <i class="uil uil-eye"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert__card-body">
+                            <div class="cert__card-meta">
+                                <span class="cert__org">Pearson</span>
+                                <span class="cert__date">24 Jan 2025</span>
+                            </div>
+                            <h3 class="cert__card-title">Quick Start Guide to Large Language Models (LLMs)</h3>
+                        </div>
+                    </article>
+
+                    <!--==================== Certificate 2 ====================-->
+                    <article class="cert__card swiper-slide">
+                        <div class="cert__card-img-wrapper">
+                            <img src="/assets/img/Certifications/2.jpg" alt="Data Engineering Programming" class="cert__card-img">
+                            <div class="cert__card-overlay">
+                                <a href="/assets/pdf/2.pdf" target="_blank" rel="noopener" class="cert__preview-btn">
+                                    <i class="uil uil-eye"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert__card-body">
+                            <div class="cert__card-meta">
+                                <span class="cert__org">BINUS University</span>
+                                <span class="cert__date">24 Jan 2025</span>
+                            </div>
+                            <h3 class="cert__card-title">Data Engineering Programming</h3>
+                        </div>
+                    </article>
+
+                    <!--==================== Certificate 3 ====================-->
+                    <article class="cert__card swiper-slide">
+                        <div class="cert__card-img-wrapper">
+                            <img src="/assets/img/Certifications/3.jpg" alt="Enterprise Architecture for Digital Transformation" class="cert__card-img">
+                            <div class="cert__card-overlay">
+                                <a href="/assets/pdf/3.pdf" target="_blank" rel="noopener" class="cert__preview-btn">
+                                    <i class="uil uil-eye"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert__card-body">
+                            <div class="cert__card-meta">
+                                <span class="cert__org">BINUS University</span>
+                                <span class="cert__date">24 Jan 2025</span>
+                            </div>
+                            <h3 class="cert__card-title">Enterprise Architecture for Digital Transformation</h3>
+                        </div>
+                    </article>
+
+                    <!--==================== Certificate 4 ====================-->
+                    <article class="cert__card swiper-slide">
+                        <div class="cert__card-img-wrapper">
+                            <img src="/assets/img/Certifications/4.jpg" alt="Dev Certification for Machine Learning with TensorFlow" class="cert__card-img">
+                            <div class="cert__card-overlay">
+                                <a href="/assets/pdf/4.pdf" target="_blank" rel="noopener" class="cert__preview-btn">
+                                    <i class="uil uil-eye"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert__card-body">
+                            <div class="cert__card-meta">
+                                <span class="cert__org">dev.id</span>
+                                <span class="cert__date">24 Jan 2025</span>
+                            </div>
+                            <h3 class="cert__card-title">Dev Certification for Machine Learning with TensorFlow</h3>
+                        </div>
+                    </article>
+
+                    <!--==================== Certificate 5 ====================-->
+                    <article class="cert__card swiper-slide">
+                        <div class="cert__card-img-wrapper">
+                            <img src="/assets/img/Certifications/5.jpg" alt="Artificial Intelligence" class="cert__card-img">
+                            <div class="cert__card-overlay">
+                                <a href="/assets/pdf/5.pdf" target="_blank" rel="noopener" class="cert__preview-btn">
+                                    <i class="uil uil-eye"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert__card-body">
+                            <div class="cert__card-meta">
+                                <span class="cert__org">BINUS University</span>
+                                <span class="cert__date">24 Jan 2025</span>
+                            </div>
+                            <h3 class="cert__card-title">Artificial Intelligence</h3>
+                        </div>
+                    </article>
+
+                    <!--==================== Certificate 6 ====================-->
+                    <article class="cert__card swiper-slide">
+                        <div class="cert__card-img-wrapper">
+                            <img src="/assets/img/Certifications/6.jpg" alt="Bangkit, Specializing In Machine Learning" class="cert__card-img">
+                            <div class="cert__card-overlay">
+                                <a href="/assets/pdf/6.pdf" target="_blank" rel="noopener" class="cert__preview-btn">
+                                    <i class="uil uil-eye"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert__card-body">
+                            <div class="cert__card-meta">
+                                <span class="cert__org">Bangkit Academy</span>
+                                <span class="cert__date">24 Jan 2025</span>
+                            </div>
+                            <h3 class="cert__card-title">Bangkit, Specializing In Machine Learning</h3>
+                        </div>
+                    </article>
+
+                    <!--==================== Certificate 7 ====================-->
+                    <article class="cert__card swiper-slide">
+                        <div class="cert__card-img-wrapper">
+                            <img src="/assets/img/Certifications/7.jpg" alt="Google IT Automation with Python" class="cert__card-img">
+                            <div class="cert__card-overlay">
+                                <a href="/assets/pdf/7.pdf" target="_blank" rel="noopener" class="cert__preview-btn">
+                                    <i class="uil uil-eye"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert__card-body">
+                            <div class="cert__card-meta">
+                                <span class="cert__org">Google</span>
+                                <span class="cert__date">24 Jan 2025</span>
+                            </div>
+                            <h3 class="cert__card-title">Google IT Automation with Python</h3>
+                        </div>
+                    </article>
+
+                    <!--==================== Certificate 8 ====================-->
+                    <article class="cert__card swiper-slide">
+                        <div class="cert__card-img-wrapper">
+                            <img src="/assets/img/Certifications/8.jpg" alt="TensorFlow: Advanced Techniques" class="cert__card-img">
+                            <div class="cert__card-overlay">
+                                <a href="/assets/pdf/8.pdf" target="_blank" rel="noopener" class="cert__preview-btn">
+                                    <i class="uil uil-eye"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert__card-body">
+                            <div class="cert__card-meta">
+                                <span class="cert__org">DeepLearning.AI</span>
+                                <span class="cert__date">24 Jan 2025</span>
+                            </div>
+                            <h3 class="cert__card-title">TensorFlow: Advanced Techniques</h3>
+                        </div>
+                    </article>
+
+                    <!--==================== Certificate 9 ====================-->
+                    <article class="cert__card swiper-slide">
+                        <div class="cert__card-img-wrapper">
+                            <img src="/assets/img/Certifications/9.jpg" alt="TensorFlow: Data and Deployment" class="cert__card-img">
+                            <div class="cert__card-overlay">
+                                <a href="/assets/pdf/9.pdf" target="_blank" rel="noopener" class="cert__preview-btn">
+                                    <i class="uil uil-eye"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert__card-body">
+                            <div class="cert__card-meta">
+                                <span class="cert__org">DeepLearning.AI</span>
+                                <span class="cert__date">24 Jan 2025</span>
+                            </div>
+                            <h3 class="cert__card-title">TensorFlow: Data and Deployment</h3>
+                        </div>
+                    </article>
+
+                    <!--==================== Certificate 10 ====================-->
+                    <article class="cert__card swiper-slide">
+                        <div class="cert__card-img-wrapper">
+                            <img src="/assets/img/Certifications/10.jpg" alt="Machine Learning" class="cert__card-img">
+                            <div class="cert__card-overlay">
+                                <a href="/assets/pdf/10.pdf" target="_blank" rel="noopener" class="cert__preview-btn">
+                                    <i class="uil uil-eye"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert__card-body">
+                            <div class="cert__card-meta">
+                                <span class="cert__org">Stanford University</span>
+                                <span class="cert__date">24 Jan 2025</span>
+                            </div>
+                            <h3 class="cert__card-title">Machine Learning</h3>
+                        </div>
+                    </article>
+
+                    <!--==================== Certificate 11 ====================-->
+                    <article class="cert__card swiper-slide">
+                        <div class="cert__card-img-wrapper">
+                            <img src="/assets/img/Certifications/11.jpg" alt="Belajar Analisis Data dengan Python" class="cert__card-img">
+                            <div class="cert__card-overlay">
+                                <a href="/assets/pdf/11.pdf" target="_blank" rel="noopener" class="cert__preview-btn">
+                                    <i class="uil uil-eye"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert__card-body">
+                            <div class="cert__card-meta">
+                                <span class="cert__org">Dicoding Indonesia</span>
+                                <span class="cert__date">24 Jan 2025</span>
+                            </div>
+                            <h3 class="cert__card-title">Belajar Analisis Data dengan Python</h3>
+                        </div>
+                    </article>
+
+                    <!--==================== Certificate 12 ====================-->
+                    <article class="cert__card swiper-slide">
+                        <div class="cert__card-img-wrapper">
+                            <img src="/assets/img/Certifications/12.jpg" alt="Generative Adversarial Networks (GANs)" class="cert__card-img">
+                            <div class="cert__card-overlay">
+                                <a href="/assets/pdf/12.pdf" target="_blank" rel="noopener" class="cert__preview-btn">
+                                    <i class="uil uil-eye"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert__card-body">
+                            <div class="cert__card-meta">
+                                <span class="cert__org">DeepLearning.AI</span>
+                                <span class="cert__date">24 Jan 2025</span>
+                            </div>
+                            <h3 class="cert__card-title">Generative Adversarial Networks (GANs)</h3>
+                        </div>
+                    </article>
+
+                    <!--==================== Certificate 13 ====================-->
+                    <article class="cert__card swiper-slide">
+                        <div class="cert__card-img-wrapper">
+                            <img src="/assets/img/Certifications/13.jpg" alt="Mathematics for Machine Learning and Data Science" class="cert__card-img">
+                            <div class="cert__card-overlay">
+                                <a href="/assets/pdf/13.pdf" target="_blank" rel="noopener" class="cert__preview-btn">
+                                    <i class="uil uil-eye"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert__card-body">
+                            <div class="cert__card-meta">
+                                <span class="cert__org">DeepLearning.AI</span>
+                                <span class="cert__date">24 Jan 2025</span>
+                            </div>
+                            <h3 class="cert__card-title">Mathematics for Machine Learning and Data Science</h3>
+                        </div>
+                    </article>
+
+                                        <!--==================== Certificate 14 ====================-->
+                    <article class="cert__card swiper-slide">
+                        <div class="cert__card-img-wrapper">
+                            <img src="/assets/img/Certifications/14.jpg" alt="CS50's Introduction to Programming with Python" class="cert__card-img">
+                            <div class="cert__card-overlay">
+                                <a href="/assets/pdf/14.pdf" target="_blank" rel="noopener" class="cert__preview-btn">
+                                    <i class="uil uil-eye"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert__card-body">
+                            <div class="cert__card-meta">
+                                <span class="cert__org">CS50</span>
+                                <span class="cert__date">24 Jan 2025</span>
+                            </div>
+                            <h3 class="cert__card-title">CS50's Introduction to Programming with Python</h3>
+                        </div>
+                    </article>
+
+                    <!--==================== Certificate 15 ====================-->
+                    <article class="cert__card swiper-slide">
+                        <div class="cert__card-img-wrapper">
+                            <img src="/assets/img/Certifications/15.jpg" alt="Machine Learning and Data Mining in The Data Science Capabilities" class="cert__card-img">
+                            <div class="cert__card-overlay">
+                                <a href="/assets/pdf/15.pdf" target="_blank" rel="noopener" class="cert__preview-btn">
+                                    <i class="uil uil-eye"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert__card-body">
+                            <div class="cert__card-meta">
+                                <span class="cert__org">Digital Talent Scholarship</span>
+                                <span class="cert__date">24 Jan 2025</span>
+                            </div>
+                            <h3 class="cert__card-title">Machine Learning and Data Mining in The Data Science Capabilities</h3>
+                        </div>
+                    </article>
+                </div>
+                
+                <!-- Navigation with Arrows -->
+                <div class="cert__nav-wrapper">
+                    <div class="cert__nav-btn cert__nav-prev">
+                        <i class="uil uil-angle-left-b"></i>
+                    </div>
+                    <div class="swiper-pagination cert__pagination"></div>
+                    <div class="cert__nav-btn cert__nav-next">
+                        <i class="uil uil-angle-right-b"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container">
+                <div class="footer__content">
+                    <!-- Brand -->
+                    <div class="footer__brand">
+                        <h2 class="footer__title">Rheyhan<br>Fahry.</h2>
+                    </div>
+
+                    <!-- Links Columns -->
+                    <div class="footer__columns">
+                        <!-- Explore Column -->
+                        <div class="footer__column">
+                            <h4 class="footer__column-title">Explore</h4>
+                            <nav class="footer__nav">
+                                <a href="index.html" class="footer__nav-link">Home</a>
+                                <a href="about.html" class="footer__nav-link">About</a>
+                                <a href="portfolio.html" class="footer__nav-link">Projects</a>
+                            </nav>
+                        </div>
+
+                        <!-- Connect Column -->
+                        <div class="footer__column">
+                            <h4 class="footer__column-title">Let's Connect</h4>
+                            <nav class="footer__nav">
+                                <a href="mailto:rheyhanfahry@gmail.com" class="footer__nav-link">Email</a>
+                                <a href="https://www.linkedin.com/in/rheyhan-fahry/" target="_blank" class="footer__nav-link">LinkedIn</a>
+                                <a href="https://github.com/Rheyhan" target="_blank" class="footer__nav-link">GitHub</a>
+                                <a href="https://www.instagram.com/rheyhan.fahry/" target="_blank" class="footer__nav-link">Instagram</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Row -->
+                <div class="footer__bottom">
+                    <p class="footer__copy">&copy; 2026</p>
+                    <p class="footer__copy">Rheyhan Fahry.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="/assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="assets/js/main.js"></script>
+
+    <!--=================== Animated text ===============-->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        var typed = new Typed(".auto-input", {
+            strings: [
+                "'m into machine learning",
+                "‎ used to be a CV engineer",
+                "'m an AI trainer",
+                "‎ used to be a data analyst",
+                "'m a bachelor in statistics",
+            ],
+            typeSpeed: 100,
+            backSpeed: 100,
+            loop: true,
+        });
+    </script>
+
+    <!--=================== Animate scroll js ===============-->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 150,
+            duration: 1200
+        });
+    </script>
+
+</body>
+
+</html>

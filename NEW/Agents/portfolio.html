@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Rheyhan Fahry portfolio projects">
+    <meta name="keywords" content="Rhey, Rheyhan Fahry, portfolio">
+
+    <!--==================== UNICONS ====================-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+
+    <!--==================== SWIPER CSS ====================-->
+    <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <title>Rhey's Portfolio - Projects</title>
+
+    <!--==================== Favicon ====================-->
+    <link rel="shortcut icon" href="assets/img/Icon.png" type="image/png">
+
+    <!--==================== Animate on scroll CDN ====================-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">Who am i?</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__items">
+                        <a href="index.html" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+
+                    <li class="nav__items">
+                        <a href="about.html" class="nav__link ">
+                            <i class="uil uil-user nav__icon"></i> About
+                        </a>
+                    </li>
+
+                    <li class="nav__items">
+                        <a href="portfolio.html" class="nav__link active-link">
+                            <i class="uil uil-briefcase-alt nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <button class="nav__music" id="music-toggle" type="button" aria-label="Play random music">
+                    <i class="uil uil-music"></i>
+                </button>
+
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+                
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!--==================== PORTFOLIO ====================-->
+        <section class="portfolio section" id="portfolio">
+            <!-- Page Header -->
+            <div class="portfolio__page-header" data-aos="fade-down">
+                <div class="container--full">
+                    <h1 class="portfolio__page-title">My Projects</h1>
+                    <p class="portfolio__page-subtitle">A collection of my work in data science, machine learning, and software development</p>
+                </div>
+            </div>
+
+            <!-- Toolbar: Search + Filter Button (Mobile) + Sort -->
+            <div class="portfolio__toolbar" data-aos="fade-up">
+                <div class="container--full">
+                    <div class="portfolio__toolbar-inner">
+                        <!-- Search -->
+                        <div class="portfolio__search-box">
+                            <i class="uil uil-search"></i>
+                            <input id="portfolio-search" type="search" placeholder="Search projects..." aria-label="Search projects">
+                        </div>
+
+                        <!-- Mobile Filter Button -->
+                        <button class="portfolio__filter-btn" id="filter-toggle-btn">
+                            <i class="uil uil-filter"></i>
+                            <span>Filters</span>
+                            <span class="portfolio__filter-badge" id="active-filters-count">0</span>
+                        </button>
+
+                        <!-- Sort -->
+                        <div class="portfolio__sort-box">
+                            <label for="sort-select">Sort by:</label>
+                            <select id="sort-select">
+                                <option value="newest">Newest</option>
+                                <option value="oldest">Oldest</option>
+                                <option value="name">Name A-Z</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Layout -->
+            <div class="portfolio__layout">
+                <!-- Desktop Sidebar / Mobile Filter Modal -->
+                <aside class="portfolio__filters" id="filters-panel">
+                    <!-- Mobile Modal Header -->
+                    <div class="portfolio__filters-header">
+                        <h3>Filters</h3>
+                        <button class="portfolio__filters-close" id="filters-close">
+                            <i class="uil uil-times"></i>
+                        </button>
+                    </div>
+
+                    <!-- Mobile Overlay -->
+                    <div class="portfolio__filters-overlay" id="filters-overlay"></div>
+
+                    <div class="portfolio__filters-content">
+                        <!-- Work Type -->
+                        <div class="portfolio__filter-section">
+                            <h4 class="portfolio__filter-label">Work Type</h4>
+                            <div class="portfolio__filter-chips">
+                                <label class="portfolio__chip portfolio__chip--checkbox">
+                                    <input type="checkbox" value="professional" checked data-filter="worktype">
+                                    <span>Professional</span>
+                                </label>
+                                <label class="portfolio__chip portfolio__chip--checkbox">
+                                    <input type="checkbox" value="academic" checked data-filter="worktype">
+                                    <span>Academic</span>
+                                </label>
+                                <label class="portfolio__chip portfolio__chip--checkbox">
+                                    <input type="checkbox" value="personal" checked data-filter="worktype">
+                                    <span>Personal</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Status -->
+                        <div class="portfolio__filter-section">
+                            <h4 class="portfolio__filter-label">Status</h4>
+                            <div class="portfolio__filter-chips">
+                                <label class="portfolio__chip portfolio__chip--checkbox">
+                                    <input type="checkbox" value="completed" checked data-filter="status">
+                                    <span>Completed</span>
+                                </label>
+                                <label class="portfolio__chip portfolio__chip--checkbox">
+                                    <input type="checkbox" value="wip" checked data-filter="status">
+                                    <span>WIP</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Tags -->
+                        <div class="portfolio__filter-section">
+                            <h4 class="portfolio__filter-label">Tags</h4>
+                            <div class="portfolio__filter-chips">
+                                <label class="portfolio__chip portfolio__chip--checkbox">
+                                    <input type="checkbox" value="machine-learning" checked data-filter="tag">
+                                    <span>Machine Learning</span>
+                                </label>
+                                <label class="portfolio__chip portfolio__chip--checkbox">
+                                    <input type="checkbox" value="time-series" checked data-filter="tag">
+                                    <span>Time Series</span>
+                                </label>
+                                <label class="portfolio__chip portfolio__chip--checkbox">
+                                    <input type="checkbox" value="computer-vision" checked data-filter="tag">
+                                    <span>Computer Vision</span>
+                                </label>
+                                <label class="portfolio__chip portfolio__chip--checkbox">
+                                    <input type="checkbox" value="nlp" checked data-filter="tag">
+                                    <span>NLP</span>
+                                </label>
+                                <label class="portfolio__chip portfolio__chip--checkbox">
+                                    <input type="checkbox" value="web-scraping" checked data-filter="tag">
+                                    <span>Web Scraping</span>
+                                </label>
+                                <label class="portfolio__chip portfolio__chip--checkbox">
+                                    <input type="checkbox" value="automation" checked data-filter="tag">
+                                    <span>Automation</span>
+                                </label>
+                                <label class="portfolio__chip portfolio__chip--checkbox">
+                                    <input type="checkbox" value="deep-learning" checked data-filter="tag">
+                                    <span>Deep Learning</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Clear Filters -->
+                        <button class="portfolio__clear-btn" id="clear-filters">
+                            <i class="uil uil-redo"></i> Reset all filters
+                        </button>
+                    </div>
+                </aside>
+
+                <!-- Projects Grid Area -->
+                <div class="portfolio__content">
+                    <div class="container--full">
+                        <!-- Results Count -->
+                        <div class="portfolio__results-bar">
+                            <span>Showing <strong id="results-count">7</strong> projects</span>
+                        </div>
+
+                        <!-- Projects Grid -->
+                        <div class="portfolio__grid" id="projects-grid">
+                            <!-- Project 1: XScrapers -->
+                            <article class="project-card" data-work="professional" data-status="completed" data-tags="machine-learning,automation,web-scraping" data-date="2024-12">
+                                <div class="project-card__image">
+                                    <img src="/assets/img/portfolio1.jpg" alt="XScrapers">
+                                    <div class="project-card__overlay">
+                                        <a href="portfolio-discover.html?id=xscrapers" class="project-card__view-btn">
+                                            <i class="uil uil-eye"></i> View Project
+                                        </a>
+                                    </div>
+                                    <span class="project-card__badge project-card__badge--professional">Professional</span>
+                                    <span class="project-card__status project-card__status--completed">Completed</span>
+                                </div>
+                                <div class="project-card__content">
+                                    <h3 class="project-card__title">XScrapers</h3>
+                                    <p class="project-card__desc">Python web scraping tool for automated data extraction from X (formerly Twitter) with scheduling and multi-format export capabilities.</p>
+                                    <div class="project-card__techs">
+                                        <span class="project-card__tech">Python</span>
+                                        <span class="project-card__tech">Selenium</span>
+                                        <span class="project-card__tech">Tkinter</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Project 2: Fruit Ninja CV -->
+                            <article class="project-card" data-work="academic" data-status="completed" data-tags="computer-vision,deep-learning,automation" data-date="2024-10">
+                                <div class="project-card__image">
+                                    <img src="/assets/img/portfolio2.jpg" alt="Fruit Ninja CV Slicer">
+                                    <div class="project-card__overlay">
+                                        <a href="portfolio-discover.html?id=fruit-ninja-cv" class="project-card__view-btn">
+                                            <i class="uil uil-eye"></i> View Project
+                                        </a>
+                                    </div>
+                                    <span class="project-card__badge project-card__badge--academic">Academic</span>
+                                    <span class="project-card__status project-card__status--completed">Completed</span>
+                                </div>
+                                <div class="project-card__content">
+                                    <h3 class="project-card__title">Fruit Ninja CV Slicer</h3>
+                                    <p class="project-card__desc">Computer vision automation system that plays Fruit Ninja using real-time object detection with TensorRT optimization.</p>
+                                    <div class="project-card__techs">
+                                        <span class="project-card__tech">OpenCV</span>
+                                        <span class="project-card__tech">TensorRT</span>
+                                        <span class="project-card__tech">YOLO</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Project 3: Dashboard App -->
+                            <article class="project-card" data-work="professional" data-status="wip" data-tags="machine-learning,data-viz,web-scraping" data-date="2024-08">
+                                <div class="project-card__image">
+                                    <img src="/assets/img/portfolio3.jpg" alt="Dashboard App">
+                                    <div class="project-card__overlay">
+                                        <a href="portfolio-discover.html?id=dashboard-app" class="project-card__view-btn">
+                                            <i class="uil uil-eye"></i> View Project
+                                        </a>
+                                    </div>
+                                    <span class="project-card__badge project-card__badge--professional">Professional</span>
+                                    <span class="project-card__status project-card__status--wip">WIP</span>
+                                </div>
+                                <div class="project-card__content">
+                                    <h3 class="project-card__title">Analytics Dashboard</h3>
+                                    <p class="project-card__desc">Interactive analytics dashboard with real-time data visualization, customizable widgets, and exportable reports.</p>
+                                    <div class="project-card__techs">
+                                        <span class="project-card__tech">React</span>
+                                        <span class="project-card__tech">D3.js</span>
+                                        <span class="project-card__tech">Flask</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Project 4: Sentiment Analyzer -->
+                            <article class="project-card" data-work="personal" data-status="completed" data-tags="nlp,deep-learning,machine-learning" data-date="2024-06">
+                                <div class="project-card__image">
+                                    <img src="/assets/img/portfolio2.jpg" alt="Sentiment Analyzer">
+                                    <div class="project-card__overlay">
+                                        <a href="portfolio-discover.html?id=sentiment-analyzer" class="project-card__view-btn">
+                                            <i class="uil uil-eye"></i> View Project
+                                        </a>
+                                    </div>
+                                    <span class="project-card__badge project-card__badge--personal">Personal</span>
+                                    <span class="project-card__status project-card__status--completed">Completed</span>
+                                </div>
+                                <div class="project-card__content">
+                                    <h3 class="project-card__title">Sentiment Analyzer</h3>
+                                    <p class="project-card__desc">Real-time sentiment analysis tool for social media monitoring using transformer models and FastAPI.</p>
+                                    <div class="project-card__techs">
+                                        <span class="project-card__tech">Transformers</span>
+                                        <span class="project-card__tech">FastAPI</span>
+                                        <span class="project-card__tech">PyTorch</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Project 5: Stock Predictor -->
+                            <article class="project-card" data-work="professional" data-status="completed" data-tags="time-series,machine-learning,deep-learning" data-date="2024-04">
+                                <div class="project-card__image">
+                                    <img src="/assets/img/portfolio1.jpg" alt="Stock Predictor">
+                                    <div class="project-card__overlay">
+                                        <a href="portfolio-discover.html?id=stock-predictor" class="project-card__view-btn">
+                                            <i class="uil uil-eye"></i> View Project
+                                        </a>
+                                    </div>
+                                    <span class="project-card__badge project-card__badge--professional">Professional</span>
+                                    <span class="project-card__status project-card__status--completed">Completed</span>
+                                </div>
+                                <div class="project-card__content">
+                                    <h3 class="project-card__title">Stock Predictor</h3>
+                                    <p class="project-card__desc">LSTM-based stock price prediction system with technical indicators and backtesting capabilities.</p>
+                                    <div class="project-card__techs">
+                                        <span class="project-card__tech">TensorFlow</span>
+                                        <span class="project-card__tech">Pandas</span>
+                                        <span class="project-card__tech">NumPy</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Project 6: Face Recognition -->
+                            <article class="project-card" data-work="academic" data-status="wip" data-tags="computer-vision,deep-learning,machine-learning" data-date="2024-02">
+                                <div class="project-card__image">
+                                    <img src="/assets/img/portfolio3.jpg" alt="Face Recognition System">
+                                    <div class="project-card__overlay">
+                                        <a href="portfolio-discover.html?id=face-recognition" class="project-card__view-btn">
+                                            <i class="uil uil-eye"></i> View Project
+                                        </a>
+                                    </div>
+                                    <span class="project-card__badge project-card__badge--academic">Academic</span>
+                                    <span class="project-card__status project-card__status--wip">WIP</span>
+                                </div>
+                                <div class="project-card__content">
+                                    <h3 class="project-card__title">Face Recognition System</h3>
+                                    <p class="project-card__desc">Real-time face recognition and attendance tracking system for educational institutions using FaceNet.</p>
+                                    <div class="project-card__techs">
+                                        <span class="project-card__tech">OpenCV</span>
+                                        <span class="project-card__tech">FaceNet</span>
+                                        <span class="project-card__tech">SQLite</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Project 7: Price Tracker -->
+                            <article class="project-card" data-work="personal" data-status="completed" data-tags="automation,web-scraping" data-date="2023-12">
+                                <div class="project-card__image">
+                                    <img src="/assets/img/portfolio1.jpg" alt="Price Tracker Bot">
+                                    <div class="project-card__overlay">
+                                        <a href="portfolio-discover.html?id=price-tracker" class="project-card__view-btn">
+                                            <i class="uil uil-eye"></i> View Project
+                                        </a>
+                                    </div>
+                                    <span class="project-card__badge project-card__badge--personal">Personal</span>
+                                    <span class="project-card__status project-card__status--completed">Completed</span>
+                                </div>
+                                <div class="project-card__content">
+                                    <h3 class="project-card__title">Price Tracker Bot</h3>
+                                    <p class="project-card__desc">Automated price monitoring bot with Telegram notifications for tracking e-commerce deals.</p>
+                                    <div class="project-card__techs">
+                                        <span class="project-card__tech">Python</span>
+                                        <span class="project-card__tech">BeautifulSoup</span>
+                                        <span class="project-card__tech">Telegram API</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- No Results -->
+                        <div class="portfolio__no-results" id="no-results" style="display: none;">
+                            <i class="uil uil-search-alt"></i>
+                            <h3>No projects found</h3>
+                            <p>Try adjusting your filters or search query</p>
+                            <button class="portfolio__clear-btn" id="clear-filters-empty">
+                                <i class="uil uil-redo"></i> Clear Filters
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container">
+                <div class="footer__content">
+                    <div class="footer__brand">
+                        <h2 class="footer__title">Rheyhan<br>Fahry.</h2>
+                    </div>
+                    <div class="footer__columns">
+                        <div class="footer__column">
+                            <h4 class="footer__column-title">Explore</h4>
+                            <nav class="footer__nav">
+                                <a href="index.html" class="footer__nav-link">Home</a>
+                                <a href="about.html" class="footer__nav-link">About</a>
+                                <a href="portfolio.html" class="footer__nav-link">Projects</a>
+                            </nav>
+                        </div>
+                        <div class="footer__column">
+                            <h4 class="footer__column-title">Let's Connect</h4>
+                            <nav class="footer__nav">
+                                <a href="mailto:rheyhanfahry@gmail.com" class="footer__nav-link">Email</a>
+                                <a href="https://www.linkedin.com/in/rheyhan-fahry/" target="_blank" class="footer__nav-link">LinkedIn</a>
+                                <a href="https://github.com/Rheyhan" target="_blank" class="footer__nav-link">GitHub</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__bottom">
+                    <p class="footer__copy">&copy; 2026 Rheyhan Fahry.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="/assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="assets/js/main.js"></script>
+
+    <!--=================== Animate scroll js ===============-->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ offset: 100, duration: 800 });
+    </script>
+
+    <!-- Portfolio Filtering Script -->
+    <script>
+        (function() {
+            // Elements
+            const searchInput = document.getElementById('portfolio-search');
+            const filterToggleBtn = document.getElementById('filter-toggle-btn');
+            const filtersPanel = document.getElementById('filters-panel');
+            const filtersClose = document.getElementById('filters-close');
+            const filtersOverlay = document.getElementById('filters-overlay');
+            const cards = document.querySelectorAll('.project-card');
+            const resultsCount = document.getElementById('results-count');
+            const noResults = document.getElementById('no-results');
+            const activeFiltersBadge = document.getElementById('active-filters-count');
+            const sortSelect = document.getElementById('sort-select');
+
+            // State
+            let selectedWorktypes = new Set(['professional', 'academic', 'personal']);
+            let selectedStatuses = new Set(['completed', 'wip']);
+            let selectedTags = new Set(['machine-learning', 'time-series', 'computer-vision', 'nlp', 'web-scraping', 'automation', 'deep-learning']);
+            let searchQuery = '';
+
+            // Mobile Filter Toggle
+            function openFilters() {
+                filtersPanel.classList.add('is-open');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeFilters() {
+                filtersPanel.classList.remove('is-open');
+                document.body.style.overflow = '';
+            }
+
+            if (filterToggleBtn) {
+                filterToggleBtn.addEventListener('click', openFilters);
+            }
+            if (filtersClose) {
+                filtersClose.addEventListener('click', closeFilters);
+            }
+            if (filtersOverlay) {
+                filtersOverlay.addEventListener('click', closeFilters);
+            }
+
+            // Update active filters badge
+            function updateFilterBadge() {
+                const totalFilters = selectedWorktypes.size + selectedStatuses.size + selectedTags.size;
+                const maxFilters = 3 + 2 + 7; // all worktypes + all statuses + all tags
+                const activeCount = maxFilters - totalFilters;
+                
+                if (activeFiltersBadge) {
+                    activeFiltersBadge.textContent = activeCount > 0 ? activeCount : '';
+                    activeFiltersBadge.style.display = activeCount > 0 ? 'flex' : 'none';
+                }
+            }
+
+            // Check if card matches filters
+            function matchesFilters(card) {
+                const worktype = card.dataset.work;
+                const status = card.dataset.status;
+                const tags = card.dataset.tags ? card.dataset.tags.split(',') : [];
+                
+                // Worktype filter
+                if (!selectedWorktypes.has(worktype)) return false;
+                
+                // Status filter
+                if (!selectedStatuses.has(status)) return false;
+                
+                // Tag filter - card must have at least one selected tag
+                const hasMatchingTag = tags.some(tag => selectedTags.has(tag));
+                if (!hasMatchingTag) return false;
+                
+                // Search filter
+                if (searchQuery) {
+                    const query = searchQuery.toLowerCase();
+                    const title = card.querySelector('.project-card__title').textContent.toLowerCase();
+                    const desc = card.querySelector('.project-card__desc').textContent.toLowerCase();
+                    const techs = Array.from(card.querySelectorAll('.project-card__tech')).map(t => t.textContent.toLowerCase());
+                    
+                    const inTitle = title.includes(query);
+                    const inDesc = desc.includes(query);
+                    const inTechs = techs.some(t => t.includes(query));
+                    
+                    if (!inTitle && !inDesc && !inTechs) return false;
+                }
+                
+                return true;
+            }
+
+            // Apply filters
+            function applyFilters() {
+                let visibleCount = 0;
+                
+                cards.forEach(card => {
+                    if (matchesFilters(card)) {
+                        card.style.display = '';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                
+                resultsCount.textContent = visibleCount;
+                noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+                updateFilterBadge();
+            }
+
+            // Search handler
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    searchQuery = e.target.value;
+                    applyFilters();
+                });
+            }
+
+            // Filter checkbox handlers
+            document.querySelectorAll('[data-filter="worktype"]').forEach(cb => {
+                cb.addEventListener('change', function() {
+                    if (this.checked) selectedWorktypes.add(this.value);
+                    else selectedWorktypes.delete(this.value);
+                    applyFilters();
+                });
+            });
+
+            document.querySelectorAll('[data-filter="status"]').forEach(cb => {
+                cb.addEventListener('change', function() {
+                    if (this.checked) selectedStatuses.add(this.value);
+                    else selectedStatuses.delete(this.value);
+                    applyFilters();
+                });
+            });
+
+            document.querySelectorAll('[data-filter="tag"]').forEach(cb => {
+                cb.addEventListener('change', function() {
+                    if (this.checked) selectedTags.add(this.value);
+                    else selectedTags.delete(this.value);
+                    applyFilters();
+                });
+            });
+
+            // Clear filters
+            function clearAllFilters() {
+                selectedWorktypes = new Set(['professional', 'academic', 'personal']);
+                selectedStatuses = new Set(['completed', 'wip']);
+                selectedTags = new Set(['machine-learning', 'time-series', 'computer-vision', 'nlp', 'web-scraping', 'automation', 'deep-learning']);
+                searchQuery = '';
+                
+                document.querySelectorAll('.portfolio__filter-chips input').forEach(cb => cb.checked = true);
+                if (searchInput) searchInput.value = '';
+                
+                applyFilters();
+            }
+
+            document.getElementById('clear-filters')?.addEventListener('click', clearAllFilters);
+            document.getElementById('clear-filters-empty')?.addEventListener('click', clearAllFilters);
+
+            // Sort
+            if (sortSelect) {
+                sortSelect.addEventListener('change', function() {
+                    const grid = document.getElementById('projects-grid');
+                    const cardsArray = Array.from(cards);
+                    
+                    cardsArray.sort((a, b) => {
+                        if (this.value === 'newest') {
+                            return new Date(b.dataset.date) - new Date(a.dataset.date);
+                        } else if (this.value === 'oldest') {
+                            return new Date(a.dataset.date) - new Date(b.dataset.date);
+                        } else if (this.value === 'name') {
+                            return a.querySelector('.project-card__title').textContent.localeCompare(
+                                b.querySelector('.project-card__title').textContent
+                            );
+                        }
+                    });
+                    
+                    cardsArray.forEach(card => grid.appendChild(card));
+                });
+            }
+
+            // Initialize
+            applyFilters();
+        })();
+    </script>
+</body>
+
+</html>

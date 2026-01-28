@@ -23,564 +23,6 @@
 
     <!--==================== Animate on scroll CDN ====================-->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-    <style>
-        /*==================== ABOUT PAGE SPECIFIC STYLES ====================*/
-        
-        /* Hero Section */
-        .about-hero {
-            padding-top: 4rem;
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-        }
-
-        .about-hero__container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-hero__image-wrapper {
-            position: relative;
-            max-width: 320px;
-            justify-self: center;
-        }
-
-        .about-hero__image {
-            width: 100%;
-            border-radius: 1.5rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-            transition: transform 0.3s ease;
-        }
-
-        .about-hero__image:hover {
-            transform: scale(1.02);
-        }
-
-        .about-hero__image-badge {
-            position: absolute;
-            bottom: -1rem;
-            right: -1rem;
-            background: var(--first-color);
-            color: #fff;
-            padding: 0.75rem 1.25rem;
-            border-radius: 1rem;
-            font-size: var(--small-font-size);
-            font-weight: var(--font-medium);
-            box-shadow: 0 8px 20px rgba(66, 99, 235, 0.35);
-        }
-
-        .about-hero__content {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .about-hero__eyebrow {
-            font-size: var(--small-font-size);
-            color: var(--first-color);
-            font-weight: var(--font-medium);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        .about-hero__title {
-            font-size: 2.5rem;
-            line-height: 1.2;
-            margin-bottom: 0.5rem;
-        }
-
-        .about-hero__subtitle {
-            font-size: var(--h3-font-size);
-            color: var(--text-color);
-            font-weight: var(--font-medium);
-        }
-
-        .about-hero__bio {
-            color: var(--text-color);
-            line-height: 1.8;
-            margin-top: 0.5rem;
-        }
-
-        .about-hero__tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
-        }
-
-        .about-hero__tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            padding: 0.4rem 0.85rem;
-            border-radius: 999px;
-            background: var(--container-color);
-            color: var(--title-color);
-            font-size: var(--smaller-font-size);
-            border: 1px solid var(--container-color-alt);
-            transition: all 0.2s ease;
-        }
-
-        .about-hero__tag:hover {
-            border-color: var(--first-color);
-            color: var(--first-color);
-        }
-
-        .about-hero__tag i {
-            font-size: 1rem;
-            color: var(--first-color);
-        }
-
-        /* Bio Section */
-        .bio-section {
-            padding: 3rem 0;
-        }
-
-        .bio__container {
-            display: grid;
-            gap: 2rem;
-        }
-
-        .bio__card {
-            background: var(--container-color);
-            border-radius: 1.25rem;
-            padding: 2rem;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-            border: 1px solid var(--container-color-alt);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .bio__card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
-        }
-
-        .bio__card-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.25rem;
-        }
-
-        .bio__card-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 0.75rem;
-            background: linear-gradient(135deg, var(--first-color), var(--first-color-alt));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 1.35rem;
-            flex-shrink: 0;
-        }
-
-        .bio__card-title {
-            font-size: var(--h2-font-size);
-            color: var(--title-color);
-        }
-
-        .bio__card-text {
-            color: var(--text-color);
-            line-height: 1.8;
-        }
-
-        .bio__card-text p {
-            margin-bottom: 1rem;
-        }
-
-        .bio__card-text p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* Timeline Section */
-        .timeline-section {
-            padding: 3rem 0;
-        }
-
-        .timeline__container {
-            position: relative;
-        }
-
-        .timeline__list {
-            position: relative;
-            padding-left: 2rem;
-        }
-
-        .timeline__list::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0.5rem;
-            bottom: 0.5rem;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--first-color), var(--first-color-lighter));
-            border-radius: 2px;
-        }
-
-        .timeline__item {
-            position: relative;
-            padding-bottom: 2rem;
-        }
-
-        .timeline__item:last-child {
-            padding-bottom: 0;
-        }
-
-        .timeline__item::before {
-            content: "";
-            position: absolute;
-            left: -2rem;
-            top: 0.35rem;
-            width: 12px;
-            height: 12px;
-            background: var(--first-color);
-            border-radius: 50%;
-            border: 3px solid var(--body-color);
-            box-shadow: 0 0 0 3px var(--first-color-lighter);
-        }
-
-        .timeline__date {
-            font-size: var(--smaller-font-size);
-            color: var(--first-color);
-            font-weight: var(--font-medium);
-            margin-bottom: 0.25rem;
-        }
-
-        .timeline__title {
-            font-size: var(--h3-font-size);
-            color: var(--title-color);
-            margin-bottom: 0.25rem;
-        }
-
-        .timeline__subtitle {
-            font-size: var(--small-font-size);
-            color: var(--text-color-light);
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline__description {
-            color: var(--text-color);
-            font-size: var(--small-font-size);
-            line-height: 1.7;
-        }
-
-        /* Interests Grid */
-        .interests-section {
-            padding: 3rem 0;
-        }
-
-        .interests__grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.25rem;
-        }
-
-        .interest__card {
-            background: var(--container-color);
-            border-radius: 1rem;
-            padding: 1.5rem;
-            text-align: center;
-            border: 1px solid var(--container-color-alt);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-            transition: all 0.3s ease;
-        }
-
-        .interest__card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1);
-            border-color: var(--first-color-lighter);
-        }
-
-        .interest__icon {
-            width: 56px;
-            height: 56px;
-            margin: 0 auto 1rem;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--first-color-lighter), var(--container-color));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: var(--first-color);
-        }
-
-        .interest__title {
-            font-size: var(--normal-font-size);
-            color: var(--title-color);
-            font-weight: var(--font-medium);
-            margin-bottom: 0.35rem;
-        }
-
-        .interest__description {
-            font-size: var(--smaller-font-size);
-            color: var(--text-color);
-        }
-
-        /* Values Section */
-        .values-section {
-            padding: 3rem 0;
-        }
-
-        .values__grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .value__card {
-            background: var(--container-color);
-            border-radius: 1.25rem;
-            padding: 1.75rem;
-            border: 1px solid var(--container-color-alt);
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
-            transition: all 0.3s ease;
-        }
-
-        .value__card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
-        }
-
-        .value__emoji {
-            font-size: 2rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .value__title {
-            font-size: var(--h3-font-size);
-            color: var(--title-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .value__description {
-            color: var(--text-color);
-            font-size: var(--small-font-size);
-            line-height: 1.7;
-        }
-
-        /* Fun Facts Section */
-        .funfacts-section {
-            padding: 3rem 0;
-        }
-
-        .funfacts__grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-        }
-
-        .funfact__item {
-            background: var(--container-color);
-            border-radius: 1rem;
-            padding: 1.25rem;
-            text-align: center;
-            border: 1px solid var(--container-color-alt);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
-            transition: all 0.2s ease;
-        }
-
-        .funfact__item:hover {
-            transform: scale(1.03);
-            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
-        }
-
-        .funfact__number {
-            font-size: var(--h1-font-size);
-            color: var(--first-color);
-            font-weight: var(--font-semi-bold);
-        }
-
-        .funfact__label {
-            font-size: var(--smaller-font-size);
-            color: var(--text-color);
-            margin-top: 0.25rem;
-        }
-
-        /* Contact CTA */
-        .contact-cta {
-            padding: 4rem 0;
-        }
-
-        .contact-cta__card {
-            background: linear-gradient(135deg, var(--first-color), var(--first-color-alt));
-            border-radius: 1.5rem;
-            padding: 3rem 2rem;
-            text-align: center;
-            box-shadow: 0 20px 50px rgba(66, 99, 235, 0.25);
-        }
-
-        .contact-cta__title {
-            font-size: var(--h1-font-size);
-            color: #fff;
-            margin-bottom: 0.75rem;
-        }
-
-        .contact-cta__description {
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 1.5rem;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .contact-cta__buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .contact-cta__btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.85rem 1.5rem;
-            border-radius: 0.75rem;
-            font-weight: var(--font-medium);
-            font-size: var(--normal-font-size);
-            transition: all 0.25s ease;
-            text-decoration: none;
-        }
-
-        .contact-cta__btn--primary {
-            background: #fff;
-            color: var(--first-color);
-        }
-
-        .contact-cta__btn--primary:hover {
-            background: rgba(255, 255, 255, 0.9);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .contact-cta__btn--secondary {
-            background: transparent;
-            color: #fff;
-            border: 2px solid rgba(255, 255, 255, 0.4);
-        }
-
-        .contact-cta__btn--secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.7);
-        }
-
-        /* Dark theme overrides */
-        body.dark-theme .about-hero__image {
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-        }
-
-        body.dark-theme .about-hero__image-badge {
-            box-shadow: 0 8px 20px rgba(66, 99, 235, 0.5);
-        }
-
-        body.dark-theme .bio__card {
-            background: var(--container-color);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        body.dark-theme .bio__card:hover {
-            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
-        }
-
-        body.dark-theme .timeline__item::before {
-            border-color: var(--body-color);
-        }
-
-        body.dark-theme .interest__card,
-        body.dark-theme .value__card,
-        body.dark-theme .funfact__item {
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        body.dark-theme .interest__card:hover,
-        body.dark-theme .value__card:hover {
-            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.4);
-        }
-
-        body.dark-theme .interest__icon {
-            background: linear-gradient(135deg, rgba(66, 99, 235, 0.2), var(--container-color));
-        }
-
-        body.dark-theme .contact-cta__card {
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-        }
-
-        /* Responsive */
-        @media screen and (max-width: 768px) {
-            .about-hero__container {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 2rem;
-            }
-
-            .about-hero__image-wrapper {
-                max-width: 260px;
-                order: -1;
-            }
-
-            .about-hero__title {
-                font-size: 2rem;
-            }
-
-            .about-hero__tags {
-                justify-content: center;
-            }
-
-            .timeline__list {
-                padding-left: 1.5rem;
-            }
-
-            .timeline__item::before {
-                left: -1.5rem;
-            }
-        }
-
-        @media screen and (max-width: 576px) {
-            .about-hero {
-                padding-top: 3rem;
-                min-height: auto;
-            }
-
-            .about-hero__title {
-                font-size: 1.75rem;
-            }
-
-            .bio__card {
-                padding: 1.5rem;
-            }
-
-            .interests__grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .values__grid {
-                grid-template-columns: 1fr;
-            }
-
-            .funfacts__grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .contact-cta__card {
-                padding: 2rem 1.5rem;
-            }
-
-            .contact-cta__buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .contact-cta__btn {
-                width: 100%;
-                justify-content: center;
-                max-width: 280px;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -592,7 +34,7 @@
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list grid">
                     <li class="nav__items">
-                        <a href="index.html" class="nav__link">
+                        <a href="index.html" class="nav__linka">
                             <i class="uil uil-estate nav__icon"></i> Home
                         </a>
                     </li>
@@ -604,7 +46,7 @@
                     </li>
 
                     <li class="nav__items">
-                        <a href="portfolio.html" class="nav__link">
+                        <a href="portfolio.html" class="nav__linka">
                             <i class="uil uil-briefcase-alt nav__icon"></i> Portfolio
                         </a>
                     </li>
@@ -629,25 +71,32 @@
     <!--==================== MAIN ====================-->
     <main class="main">
         <!--==================== HERO SECTION ====================-->
-        <section class="about-hero section" id="about-hero">
+        <section class="about-hero section section--full-bleed" id="about-hero">
             <div class="about-hero__container container">
 
-                <div class="about-hero__content" data-aos="fade-left">
-                    <span class="about-hero__eyebrow">This is me</span>
-                    <h1 class="about-hero__title">I'm Rheyhan Fahry</h1>
-                    <p class="about-hero__bio">
-                        A data scientist with a burning passion for teaching computer on how to think and act like human does. I specialize in translating complex concepts into seamless automation. I enjoy building systems that don't just work efficiently but resonate with the people using them, and I'm always looking for ways to improve both my technical skills and the user experience.
+                <div class="about-hero__content">
+                    <span class="about-hero__eyebrow" data-aos="fade-down">This is me</span>
+                    <h1 class="about-hero__title" data-aos="fade-down" data-aos-delay="100">I'm Rheyhan Fahry</h1>
+                    <p class="about-hero__bio" data-aos="fade-down" data-aos-delay="200">
+                        A data scientist with a burning passion for teaching computers how to think and act like humans do. I specialize in translating complex concepts into seamless automation that people can use and trust.
                     </p>
+
+                    <div class="about-hero__tags" aria-hidden="false" data-aos="fade-down" data-aos-delay="300">
+                        <span class="about-hero__tag"><i class="uil uil-robot"></i> Machine Learning</span>
+                        <span class="about-hero__tag"><i class="uil uil-database"></i> Data Mining</span>
+                    </div>
                 </div>
             </div>
         </section>
+        
+        <div class="section-sep section-sep--diagonal" id="hero-bio-sep" aria-hidden="true"></div>
 
         <!--==================== MY STORY SECTION ====================-->
         <section class="bio-section section" id="story">
             <h2 class="section__title" data-aos="fade-up">My Story</h2>
             <span class="section__subtitle" data-aos="fade-up">How I got here</span>
 
-            <div class="bio__container container" data-aos="fade-up">
+            <div class="bio__container container bio__container--rows" data-aos="fade-up">
                 <div class="bio__card">
                     <div class="bio__card-header">
                         <div class="bio__card-icon">
@@ -660,7 +109,7 @@
                             I started off programming when I was 17 years old. My first language was LUA. I was so fascinated by the idea of creating helpful tools that could give me an advantage over others in game.
                         </p>
                         <p>
-                            Over the years, I explored various programming languages and technologies, gradually deciding to focus on data science due to my study in Statistics. The ability to teach computers to learn from data and make what's seemingly intelligent over humans fascinated me.
+                            Over the years, I explored various programming languages and technologies, gradually deciding to focus on data science due to my study in Statistics. The ability to teach computers to learn from data and make what's seemingly intelligent decision over humans have fascinated me.
                         </p>
                     </div>
                 </div>
@@ -674,12 +123,12 @@
                     </div>
                     <div class="bio__card-text">
                         <p>
-                            [Describe your current situation. What are you working on? What excites you 
-                            about your current projects or role?]
+                            I just graduated from university in December 2025 and currently looking for a full-time position as a data scientist or anything related to machine learning and AI. 
+                            In the meantime, I am working on several personal projects to sharpen my skills and expand my portfolio.
                         </p>
                         <p>
-                            [Mention any specializations, unique approaches, or perspectives you bring 
-                            to your work.]
+                            Solely focusing on data science and machine lerarning has allowed me to dive deep into the field, vouching knowledge and hands-on experience in building computer assisted tools. 
+                            However, I am always open to explore other fields in software development as well.
                         </p>
                     </div>
                 </div>
@@ -693,57 +142,11 @@
                     </div>
                     <div class="bio__card-text">
                         <p>
-                            [Share your aspirations. What do you want to achieve in the next few years? 
-                            What problems do you want to solve?]
+                            I aim to continuously grow as a data scientist and machine learning engineer, staying updated with the latest advancements in AI and related technologies.
                         </p>
                         <p>
-                            [Express what kind of opportunities or collaborations you're seeking.]
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!--==================== JOURNEY TIMELINE ====================-->
-        <section class="timeline-section section" id="journey">
-            <h2 class="section__title" data-aos="fade-up">My Journey</h2>
-            <span class="section__subtitle" data-aos="fade-up">Key milestones along the way</span>
-
-            <div class="timeline__container container" data-aos="fade-up">
-                <div class="timeline__list">
-                    <div class="timeline__item">
-                        <span class="timeline__date">[Year] - Present</span>
-                        <h3 class="timeline__title">[Current Role or Milestone]</h3>
-                        <span class="timeline__subtitle">[Company or Context]</span>
-                        <p class="timeline__description">
-                            [Brief description of what you're doing or what you achieved in this period.]
-                        </p>
-                    </div>
-
-                    <div class="timeline__item">
-                        <span class="timeline__date">[Year] - [Year]</span>
-                        <h3 class="timeline__title">[Previous Role or Education]</h3>
-                        <span class="timeline__subtitle">[Institution or Company]</span>
-                        <p class="timeline__description">
-                            [Brief description of your experience and key takeaways from this period.]
-                        </p>
-                    </div>
-
-                    <div class="timeline__item">
-                        <span class="timeline__date">[Year] - [Year]</span>
-                        <h3 class="timeline__title">[Earlier Experience]</h3>
-                        <span class="timeline__subtitle">[Context]</span>
-                        <p class="timeline__description">
-                            [Brief description of how this shaped your path.]
-                        </p>
-                    </div>
-
-                    <div class="timeline__item">
-                        <span class="timeline__date">[Year]</span>
-                        <h3 class="timeline__title">[Starting Point]</h3>
-                        <span class="timeline__subtitle">[Where it all began]</span>
-                        <p class="timeline__description">
-                            [Brief description of the beginning of your journey.]
+                            The current attention I'm staring at as of now is on large language models and generative AI.
+                            I believe these technologies have the potential to revolutionize how we interact with computers and access new information.
                         </p>
                     </div>
                 </div>
@@ -752,134 +155,32 @@
 
         <!--==================== INTERESTS SECTION ====================-->
         <section class="interests-section section" id="interests">
-            <h2 class="section__title" data-aos="fade-up">Beyond Work</h2>
-            <span class="section__subtitle" data-aos="fade-up">Things that spark my curiosity</span>
+            <h2 class="section__title" data-aos="fade-up">My Interests</h2>
+            <span class="section__subtitle" data-aos="fade-up">What keeps me curious</span>
 
             <div class="interests__grid container" data-aos="fade-up">
                 <div class="interest__card">
                     <div class="interest__icon">
-                        <i class="uil uil-music"></i>
+                        <i class="uil uil-robot"></i>
                     </div>
-                    <h3 class="interest__title">Music</h3>
-                    <p class="interest__description">[Your favorite genres or artists]</p>
+                    <h3 class="interest__title">Machine Learning</h3>
+                    <p class="interest__description">Exploring LLMs, neural networks, and the future of intelligent systems.</p>
                 </div>
 
                 <div class="interest__card">
                     <div class="interest__icon">
-                        <i class="uil uil-book-reader"></i>
+                        <i class="uil uil-chart-line"></i>
                     </div>
-                    <h3 class="interest__title">Reading</h3>
-                    <p class="interest__description">[Types of books you enjoy]</p>
+                    <h3 class="interest__title">Data Analytics</h3>
+                    <p class="interest__description">Turning raw data into actionable insights and compelling stories.</p>
                 </div>
 
                 <div class="interest__card">
                     <div class="interest__icon">
-                        <i class="uil uil-dumbbell"></i>
+                        <i class="uil uil-code-branch"></i>
                     </div>
-                    <h3 class="interest__title">Fitness</h3>
-                    <p class="interest__description">[Your preferred activities]</p>
-                </div>
-
-                <div class="interest__card">
-                    <div class="interest__icon">
-                        <i class="uil uil-camera"></i>
-                    </div>
-                    <h3 class="interest__title">Photography</h3>
-                    <p class="interest__description">[What you like to capture]</p>
-                </div>
-
-                <div class="interest__card">
-                    <div class="interest__icon">
-                        <i class="uil uil-plane"></i>
-                    </div>
-                    <h3 class="interest__title">Travel</h3>
-                    <p class="interest__description">[Places you love or want to visit]</p>
-                </div>
-
-                <div class="interest__card">
-                    <div class="interest__icon">
-                        <i class="uil uil-utensils"></i>
-                    </div>
-                    <h3 class="interest__title">Cooking</h3>
-                    <p class="interest__description">[Cuisines or dishes you enjoy making]</p>
-                </div>
-            </div>
-        </section>
-
-        <!--==================== VALUES SECTION ====================-->
-        <section class="values-section section" id="values">
-            <h2 class="section__title" data-aos="fade-up">What I Believe In</h2>
-            <span class="section__subtitle" data-aos="fade-up">Core values that guide me</span>
-
-            <div class="values__grid container" data-aos="fade-up">
-                <div class="value__card">
-                    <span class="value__emoji">🎯</span>
-                    <h3 class="value__title">[Value 1]</h3>
-                    <p class="value__description">
-                        [Explain this value and why it matters to you. How does it influence your work and decisions?]
-                    </p>
-                </div>
-
-                <div class="value__card">
-                    <span class="value__emoji">🤝</span>
-                    <h3 class="value__title">[Value 2]</h3>
-                    <p class="value__description">
-                        [Explain this value and how it shapes your interactions with others and your approach to collaboration.]
-                    </p>
-                </div>
-
-                <div class="value__card">
-                    <span class="value__emoji">📚</span>
-                    <h3 class="value__title">[Value 3]</h3>
-                    <p class="value__description">
-                        [Explain this value and how it drives your growth and continuous learning.]
-                    </p>
-                </div>
-
-                <div class="value__card">
-                    <span class="value__emoji">💡</span>
-                    <h3 class="value__title">[Value 4]</h3>
-                    <p class="value__description">
-                        [Explain this value and how it inspires your creativity and problem-solving.]
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!--==================== FUN FACTS SECTION ====================-->
-        <section class="funfacts-section section" id="funfacts">
-            <h2 class="section__title" data-aos="fade-up">Fun Facts</h2>
-            <span class="section__subtitle" data-aos="fade-up">A few numbers about me</span>
-
-            <div class="funfacts__grid container" data-aos="fade-up">
-                <div class="funfact__item">
-                    <span class="funfact__number">[X]+</span>
-                    <p class="funfact__label">Cups of coffee per week</p>
-                </div>
-
-                <div class="funfact__item">
-                    <span class="funfact__number">[X]</span>
-                    <p class="funfact__label">Countries visited</p>
-                </div>
-
-                <div class="funfact__item">
-                    <span class="funfact__number">[X]+</span>
-                    <p class="funfact__label">Books read this year</p>
-                </div>
-
-                <div class="funfact__item">
-                    <span class="funfact__number">[X]</span>
-                    <p class="funfact__label">Languages spoken</p>
-                </div>
-
-                <div class="funfact__item">
-                    <span class="funfact__number">[X]+</span>
-                    <p class="funfact__label">Playlists curated</p>
-                </div>
-
-                <div class="funfact__item">
-                    <span class="funfact__number">∞</span>
-                    <p class="funfact__label">Curiosity level</p>
+                    <h3 class="interest__title">Automation</h3>
+                    <p class="interest__description">Building tools that make repetitive tasks disappear.</p>
                 </div>
             </div>
         </section>
@@ -894,10 +195,10 @@
                         Feel free to reach out!
                     </p>
                     <div class="contact-cta__buttons">
-                        <a href="mailto:[your-email@example.com]" class="contact-cta__btn contact-cta__btn--primary">
+                        <a href="mailto:rheyhanfahry@gmail.com" class="contact-cta__btn contact-cta__btn--primary">
                             <i class="uil uil-envelope"></i> Send an Email
                         </a>
-                        <a href="https://linkedin.com/in/[your-profile]" target="_blank" rel="noopener" class="contact-cta__btn contact-cta__btn--secondary">
+                        <a href="https://www.linkedin.com/in/rheyhan-fahry/" target="_blank" rel="noopener" class="contact-cta__btn contact-cta__btn--secondary">
                             <i class="uil uil-linkedin"></i> LinkedIn
                         </a>
                     </div>
@@ -932,10 +233,10 @@
                         <div class="footer__column">
                             <h4 class="footer__column-title">Let's Connect</h4>
                             <nav class="footer__nav">
-                                <a href="mailto:[your-email@example.com]" class="footer__nav-link">Email</a>
-                                <a href="https://linkedin.com/in/[your-profile]" target="_blank" class="footer__nav-link">LinkedIn</a>
-                                <a href="https://github.com/[your-username]" target="_blank" class="footer__nav-link">GitHub</a>
-                                <a href="https://instagram.com/[your-username]" target="_blank" class="footer__nav-link">Instagram</a>
+                                <a href="mailto:rheyhanfahry@gmail.com" class="footer__nav-link">Email</a>
+                                <a href="https://www.linkedin.com/in/rheyhan-fahry/" target="_blank" rel="noopener noreferrer" class="footer__nav-link">LinkedIn</a>
+                                <a href="https://github.com/Rheyhan" target="_blank" rel="noopener noreferrer" class="footer__nav-link">GitHub</a>
+                                <a href="https://www.instagram.com/rheyhan.fahry/" target="_blank" rel="noopener noreferrer" class="footer__nav-link">Instagram</a>
                             </nav>
                         </div>
                     </div>
@@ -963,6 +264,112 @@
             offset: 100,
             duration: 1000
         });
+    </script>
+    <script>
+        // Reveal bio section and animate separator
+        (function () {
+            var bio = document.getElementById('story');
+            var sep = document.getElementById('hero-bio-sep');
+            if (!bio) return;
+
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        bio.classList.add('is-revealed');
+                        if (sep) sep.classList.add('is-active');
+                        io.unobserve(bio);
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            io.observe(bio);
+        })();
+    </script>
+    <script>
+        // Header image -> solid transition (only for this page)
+        (function () {
+            var header = document.getElementById('header');
+            if (!header) return;
+
+            var hero = document.getElementById('about-hero');
+            var mq = window.matchMedia('(min-width: 768px)');
+            var lastY = 0;
+            var ticking = false;
+            var root = document.documentElement;
+            var initialOverlayAlpha = 0.6;
+
+            function applyHeaderImageState() {
+                if (mq.matches) header.classList.add('header--with-image');
+                else {
+                    header.classList.remove('header--with-image');
+                    header.style.backgroundColor = '';
+                    root.style.setProperty('--header-overlay-alpha', '');
+                }
+            }
+
+            function getHeroMetrics() {
+                if (!hero) return { heroTop: 0, heroHeight: 0, headerHeight: header.offsetHeight, threshold: 0 };
+                var heroTop = hero.getBoundingClientRect().top + window.pageYOffset;
+                var heroHeight = hero.offsetHeight;
+                var headerHeight = header.offsetHeight;
+                var threshold = heroTop + heroHeight - headerHeight;
+                return { heroTop: heroTop, heroHeight: heroHeight, headerHeight: headerHeight, threshold: threshold };
+            }
+
+            function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+
+            function updateVisuals() {
+                var m = getHeroMetrics();
+                var progress = 0;
+
+                if (mq.matches && hero) {
+                    if (lastY <= m.heroTop) progress = 0;
+                    else if (lastY >= m.threshold) progress = 1;
+                    else progress = (lastY - m.heroTop) / (m.threshold - m.heroTop);
+
+                    progress = clamp(progress, 0, 1);
+
+                    header.style.backgroundColor = 'rgba(255,255,255,' + progress + ')';
+
+                    var overlayAlpha = (1 - progress) * initialOverlayAlpha;
+                    root.style.setProperty('--header-overlay-alpha', overlayAlpha.toFixed(3));
+                } else {
+                    header.style.backgroundColor = '';
+                    root.style.setProperty('--header-overlay-alpha', initialOverlayAlpha.toFixed(3));
+                }
+
+                if (lastY > m.threshold) header.classList.add('scrolled'); else header.classList.remove('scrolled');
+            }
+
+            function onScroll() {
+                lastY = window.scrollY || window.pageYOffset;
+                if (!ticking) {
+                    window.requestAnimationFrame(function () {
+                        updateVisuals();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }
+
+            // read any existing CSS var to use as initial overlay alpha
+            var computed = getComputedStyle(root).getPropertyValue('--header-overlay-alpha');
+            if (computed) {
+                var parsed = parseFloat(computed);
+                if (!isNaN(parsed)) initialOverlayAlpha = parsed;
+            }
+
+            // Apply on load and whenever the viewport crosses the breakpoint
+            applyHeaderImageState();
+            if (mq.addEventListener) mq.addEventListener('change', function () { applyHeaderImageState(); updateVisuals(); });
+            else if (mq.addListener) mq.addListener(function () { applyHeaderImageState(); updateVisuals(); });
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', function () { onScroll(); }, { passive: true });
+
+            // initial update
+            onScroll();
+        })();
     </script>
 </body>
 

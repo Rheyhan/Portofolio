@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Project Details - Rheyhan Fahry Portfolio">
+    <meta name="keywords" content="Portfolio, Project, Details">
+
+    <!--==================== UNICONS ====================-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+
+    <!--==================== SWIPER CSS ====================-->
+    <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <title>Project Details - Portfolio</title>
+
+    <!--==================== Favicon ====================-->
+    <link rel="shortcut icon" href="assets/img/Icon.png" type="image/png">
+
+    <!--==================== Animate on scroll CDN ====================-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">Who am i?</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__items">
+                        <a href="index.html" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+
+                    <li class="nav__items">
+                        <a href="about.html" class="nav__link">
+                            <i class="uil uil-user nav__icon"></i> About
+                        </a>
+                    </li>
+
+                    <li class="nav__items">
+                        <a href="portfolio.html" class="nav__link active-link">
+                            <i class="uil uil-briefcase-alt nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <button class="nav__music" id="music-toggle" type="button" aria-label="Play random music">
+                    <i class="uil uil-music"></i>
+                </button>
+
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <!--==================== PROJECT HERO ====================-->
+        <section class="project-hero section" id="project-hero">
+            <div class="project-hero__container container" data-aos="fade-up">
+                <a href="portfolio.html" class="project-hero__back">
+                    <i class="uil uil-arrow-left"></i> Back to Projects
+                </a>
+                
+                <div class="project-hero__content">
+                    <div class="project-hero__image-wrapper">
+                        <img src="/assets/img/portfolio1.jpg" alt="Project Cover" class="project-hero__image" id="project-image">
+                    </div>
+                    
+                    <div class="project-hero__info">
+                        <div class="project-hero__meta">
+                            <span class="project-hero__badge" id="project-type">Professional</span>
+                            <span class="project-hero__date" id="project-date">December 2024</span>
+                        </div>
+                        
+                        <h1 class="project-hero__title" id="project-title">Project Title</h1>
+                        
+                        <p class="project-hero__description" id="project-description">
+                            This is a placeholder project description. The actual project details will be loaded dynamically based on the project ID in the URL.
+                        </p>
+                        
+                        <div class="project-hero__tags" id="project-tags">
+                            <span class="project-hero__tag">Machine Learning</span>
+                            <span class="project-hero__tag">Python</span>
+                            <span class="project-hero__tag">Automation</span>
+                        </div>
+                        
+                        <div class="project-hero__actions">
+                            <a href="#" class="project-hero__btn project-hero__btn--primary" id="project-demo">
+                                <i class="uil uil-play"></i> Live Demo
+                            </a>
+                            <a href="#" class="project-hero__btn project-hero__btn--secondary" id="project-code">
+                                <i class="uil uil-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== PROJECT DETAILS ====================-->
+        <section class="project-details section" id="project-details">
+            <div class="project-details__container container">
+                <div class="project-details__grid">
+                    <!-- Main Content -->
+                    <div class="project-details__main" data-aos="fade-up">
+                        <div class="project-details__section">
+                            <h2 class="project-details__section-title">Overview</h2>
+                            <div class="project-details__content" id="project-overview">
+                                <p>
+                                    This project showcases the integration of modern machine learning techniques with 
+                                    practical software engineering. The solution addresses real-world challenges through 
+                                    innovative data processing and intelligent automation.
+                                </p>
+                                <p>
+                                    Key features include scalable architecture, robust error handling, and an intuitive 
+                                    user interface designed for both technical and non-technical users.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="project-details__section">
+                            <h2 class="project-details__section-title">Key Features</h2>
+                            <ul class="project-details__features" id="project-features">
+                                <li><i class="uil uil-check-circle"></i> Real-time data processing and analysis</li>
+                                <li><i class="uil uil-check-circle"></i> Machine learning model integration</li>
+                                <li><i class="uil uil-check-circle"></i> Scalable cloud deployment</li>
+                                <li><i class="uil uil-check-circle"></i> User-friendly dashboard interface</li>
+                                <li><i class="uil uil-check-circle"></i> Automated reporting and notifications</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-details__section">
+                            <h2 class="project-details__section-title">Technical Architecture</h2>
+                            <div class="project-details__content" id="project-architecture">
+                                <p>
+                                    The project follows a microservices architecture with clear separation of concerns 
+                                    between data ingestion, processing, and presentation layers. This design ensures 
+                                    maintainability and allows for independent scaling of components.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="project-details__section">
+                            <h2 class="project-details__section-title">Gallery</h2>
+                            <div class="project-details__gallery" id="project-gallery">
+                                <div class="project-details__gallery-item">
+                                    <img src="/assets/img/portfolio1.jpg" alt="Screenshot 1">
+                                </div>
+                                <div class="project-details__gallery-item">
+                                    <img src="/assets/img/portfolio2.jpg" alt="Screenshot 2">
+                                </div>
+                                <div class="project-details__gallery-item">
+                                    <img src="/assets/img/portfolio3.jpg" alt="Screenshot 3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <aside class="project-details__sidebar" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-details__panel">
+                            <h3 class="project-details__panel-title">Technologies</h3>
+                            <div class="project-details__techs" id="project-techs">
+                                <span class="project-details__tech">Python</span>
+                                <span class="project-details__tech">TensorFlow</span>
+                                <span class="project-details__tech">FastAPI</span>
+                                <span class="project-details__tech">React</span>
+                                <span class="project-details__tech">Docker</span>
+                                <span class="project-details__tech">AWS</span>
+                            </div>
+                        </div>
+
+                        <div class="project-details__panel">
+                            <h3 class="project-details__panel-title">Project Info</h3>
+                            <ul class="project-details__info-list">
+                                <li>
+                                    <i class="uil uil-calendar-alt"></i>
+                                    <span><strong>Started:</strong> <span id="project-started">Jan 2024</span></span>
+                                </li>
+                                <li>
+                                    <i class="uil uil-clock"></i>
+                                    <span><strong>Duration:</strong> <span id="project-duration">3 months</span></span>
+                                </li>
+                                <li>
+                                    <i class="uil uil-user"></i>
+                                    <span><strong>Role:</strong> <span id="project-role">Data Scientist</span></span>
+                                </li>
+                                <li>
+                                    <i class="uil uil-users-alt"></i>
+                                    <span><strong>Team:</strong> <span id="project-team">Solo</span></span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="project-details__panel">
+                            <h3 class="project-details__panel-title">Links</h3>
+                            <div class="project-details__links">
+                                <a href="#" class="project-details__link" id="project-link-demo">
+                                    <i class="uil uil-external-link-alt"></i> Live Demo
+                                </a>
+                                <a href="#" class="project-details__link" id="project-link-code">
+                                    <i class="uil uil-github"></i> Source Code
+                                </a>
+                                <a href="#" class="project-details__link" id="project-link-docs">
+                                    <i class="uil uil-file-alt"></i> Documentation
+                                </a>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== RELATED PROJECTS ====================-->
+        <section class="related-projects section" id="related-projects">
+            <div class="related-projects__container container">
+                <h2 class="related-projects__title" data-aos="fade-up">Related Projects</h2>
+                
+                <div class="related-projects__grid" data-aos="fade-up">
+                    <article class="portfolio__card portfolio__card--small">
+                        <div class="portfolio__card-img-wrapper">
+                            <img src="/assets/img/portfolio2.jpg" alt="Related Project" class="portfolio__card-img">
+                        </div>
+                        <div class="portfolio__card-body">
+                            <h3 class="portfolio__card-title">Fruit Ninja CV</h3>
+                            <p class="portfolio__card-text">Computer vision game automation</p>
+                            <a href="portfolio-discover.html?id=fruit-ninja-cv" class="portfolio__card-link">
+                                View <i class="uil uil-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="portfolio__card portfolio__card--small">
+                        <div class="portfolio__card-img-wrapper">
+                            <img src="/assets/img/portfolio3.jpg" alt="Related Project" class="portfolio__card-img">
+                        </div>
+                        <div class="portfolio__card-body">
+                            <h3 class="portfolio__card-title">Dashboard App</h3>
+                            <p class="portfolio__card-text">Interactive analytics dashboard</p>
+                            <a href="portfolio-discover.html?id=dashboard-app" class="portfolio__card-link">
+                                View <i class="uil uil-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="portfolio__card portfolio__card--small">
+                        <div class="portfolio__card-img-wrapper">
+                            <img src="/assets/img/portfolio1.jpg" alt="Related Project" class="portfolio__card-img">
+                        </div>
+                        <div class="portfolio__card-body">
+                            <h3 class="portfolio__card-title">Sentiment Analyzer</h3>
+                            <p class="portfolio__card-text">NLP-based sentiment analysis</p>
+                            <a href="portfolio-discover.html?id=sentiment-analyzer" class="portfolio__card-link">
+                                View <i class="uil uil-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== CONTACT CTA ====================-->
+        <section class="contact-cta section" id="contact">
+            <div class="container" data-aos="fade-up">
+                <div class="contact-cta__card">
+                    <h2 class="contact-cta__title">Interested in this project?</h2>
+                    <p class="contact-cta__description">
+                        Let's discuss how I can help you build something similar or answer any questions you have.
+                    </p>
+                    <div class="contact-cta__buttons">
+                        <a href="mailto:rheyhanfahry@gmail.com" class="contact-cta__btn contact-cta__btn--primary">
+                            <i class="uil uil-envelope"></i> Get in Touch
+                        </a>
+                        <a href="portfolio.html" class="contact-cta__btn contact-cta__btn--secondary">
+                            <i class="uil uil-briefcase-alt"></i> More Projects
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container">
+                <div class="footer__content">
+                    <div class="footer__brand">
+                        <h2 class="footer__title">Rheyhan<br>Fahry.</h2>
+                    </div>
+                    <div class="footer__columns">
+                        <div class="footer__column">
+                            <h4 class="footer__column-title">Explore</h4>
+                            <nav class="footer__nav">
+                                <a href="index.html" class="footer__nav-link">Home</a>
+                                <a href="about.html" class="footer__nav-link">About</a>
+                                <a href="portfolio.html" class="footer__nav-link">Projects</a>
+                            </nav>
+                        </div>
+                        <div class="footer__column">
+                            <h4 class="footer__column-title">Let's Connect</h4>
+                            <nav class="footer__nav">
+                                <a href="mailto:rheyhanfahry@gmail.com" class="footer__nav-link">Email</a>
+                                <a href="https://www.linkedin.com/in/rheyhan-fahry/" target="_blank" rel="noopener noreferrer" class="footer__nav-link">LinkedIn</a>
+                                <a href="https://github.com/Rheyhan" target="_blank" rel="noopener noreferrer" class="footer__nav-link">GitHub</a>
+                                <a href="https://www.instagram.com/rheyhan.fahry/" target="_blank" rel="noopener noreferrer" class="footer__nav-link">Instagram</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__bottom">
+                    <p class="footer__copy">&copy; 2026</p>
+                    <p class="footer__copy">Rheyhan Fahry.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="/assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="assets/js/main.js"></script>
+
+    <!--=================== Animate scroll js ===============-->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 100,
+            duration: 1000
+        });
+    </script>
+
+    <!-- Project Data Loader -->
+    <script>
+        (function() {
+            // Project data (in a real app, this would come from an API)
+            const projectsData = {
+                'xscrapers': {
+                    title: 'XScrapers',
+                    type: 'Professional',
+                    date: 'December 2024',
+                    started: 'October 2024',
+                    duration: '3 months',
+                    role: 'Data Engineer',
+                    team: 'Solo',
+                    description: 'A powerful Python-based web scraping tool designed for extracting data from X (formerly Twitter). Features include automated scheduling, data export in multiple formats, and a user-friendly Tkinter interface.',
+                    tags: ['Machine Learning', 'Automation', 'Web Scraping'],
+                    techs: ['Python', 'Selenium', 'Tkinter', 'BeautifulSoup', 'Pandas'],
+                    image: '/assets/img/portfolio1.jpg',
+                    demoLink: '#',
+                    codeLink: '#',
+                    features: [
+                        'Automated data extraction with scheduling',
+                        'Multi-format export (CSV, JSON, Excel)',
+                        'GUI built with Tkinter',
+                        'Proxy rotation for rate limiting',
+                        'Real-time progress monitoring'
+                    ]
+                },
+                'fruit-ninja-cv': {
+                    title: 'Fruit Ninja CV Slicer',
+                    type: 'Academic',
+                    date: 'October 2024',
+                    started: 'August 2024',
+                    duration: '2 months',
+                    role: 'Computer Vision Engineer',
+                    team: '2 people',
+                    description: 'An innovative computer vision project that automates Fruit Ninja gameplay using real-time object detection and tracking. Achieves high accuracy with optimized inference using TensorRT.',
+                    tags: ['Computer Vision', 'Deep Learning', 'Automation'],
+                    techs: ['OpenCV', 'Python', 'TensorRT', 'dxcam', 'YOLO'],
+                    image: '/assets/img/portfolio2.jpg',
+                    demoLink: '#',
+                    codeLink: '#',
+                    features: [
+                        'Real-time fruit detection and tracking',
+                        'Optimized inference with TensorRT',
+                        'Fast screen capture using dxcam',
+                        'Custom trained YOLO model',
+                        'Sub-10ms response time'
+                    ]
+                },
+                'dashboard-app': {
+                    title: 'Dashboard App',
+                    type: 'Professional',
+                    date: 'August 2024',
+                    started: 'June 2024',
+                    duration: '2 months',
+                    role: 'Full Stack Developer',
+                    team: '3 people',
+                    description: 'A comprehensive analytics dashboard providing real-time insights with interactive charts, customizable filters, and exportable reports. Built with React frontend and Flask backend.',
+                    tags: ['Data Viz', 'Machine Learning', 'Web Development'],
+                    techs: ['React', 'D3.js', 'Flask', 'PostgreSQL', 'Redis'],
+                    image: '/assets/img/portfolio3.jpg',
+                    demoLink: '#',
+                    codeLink: '#',
+                    features: [
+                        'Interactive D3.js visualizations',
+                        'Real-time data updates',
+                        'Customizable dashboard layouts',
+                        'Export to PDF and Excel',
+                        'Role-based access control'
+                    ]
+                },
+                'sentiment-analyzer': {
+                    title: 'Sentiment Analyzer',
+                    type: 'Personal',
+                    date: 'June 2024',
+                    started: 'April 2024',
+                    duration: '2 months',
+                    role: 'ML Engineer',
+                    team: 'Solo',
+                    description: 'A real-time sentiment analysis tool powered by transformer models. Monitors social media sentiment for brand reputation management and market research.',
+                    tags: ['NLP', 'Deep Learning', 'Machine Learning'],
+                    techs: ['Transformers', 'FastAPI', 'PyTorch', 'Redis', 'Docker'],
+                    image: '/assets/img/portfolio2.jpg',
+                    demoLink: '#',
+                    codeLink: '#',
+                    features: [
+                        'Real-time sentiment analysis',
+                        'Multi-language support',
+                        'Custom model fine-tuning',
+                        'RESTful API with FastAPI',
+                        'Docker containerization'
+                    ]
+                },
+                'stock-predictor': {
+                    title: 'Stock Predictor',
+                    type: 'Professional',
+                    date: 'April 2024',
+                    started: 'January 2024',
+                    duration: '3 months',
+                    role: 'Data Scientist',
+                    team: 'Solo',
+                    description: 'An LSTM-based stock price prediction system incorporating technical indicators and market sentiment for improved forecasting accuracy.',
+                    tags: ['Time Series', 'Machine Learning', 'Data Viz'],
+                    techs: ['TensorFlow', 'Pandas', 'NumPy', 'scikit-learn', 'Plotly'],
+                    image: '/assets/img/portfolio1.jpg',
+                    demoLink: '#',
+                    codeLink: '#',
+                    features: [
+                        'LSTM neural network architecture',
+                        'Technical indicator integration',
+                        'Backtesting framework',
+                        'Interactive price charts',
+                        'Automated trading signals'
+                    ]
+                },
+                'face-recognition': {
+                    title: 'Face Recognition System',
+                    type: 'Academic',
+                    date: 'February 2024',
+                    started: 'November 2023',
+                    duration: '3 months',
+                    role: 'CV Engineer',
+                    team: '4 people',
+                    description: 'A real-time face recognition and attendance tracking system designed for classroom environments. Uses FaceNet for accurate face embeddings.',
+                    tags: ['Computer Vision', 'Deep Learning', 'Machine Learning'],
+                    techs: ['OpenCV', 'FaceNet', 'SQLite', 'Python', 'Tkinter'],
+                    image: '/assets/img/portfolio3.jpg',
+                    demoLink: '#',
+                    codeLink: '#',
+                    features: [
+                        'Real-time face detection',
+                        'FaceNet embedding extraction',
+                        'Automated attendance logging',
+                        'SQLite database storage',
+                        'Admin dashboard interface'
+                    ]
+                },
+                'price-tracker': {
+                    title: 'Price Tracker Bot',
+                    type: 'Personal',
+                    date: 'December 2023',
+                    started: 'October 2023',
+                    duration: '2 months',
+                    role: 'Developer',
+                    team: 'Solo',
+                    description: 'An automated price monitoring bot that tracks e-commerce product prices and sends Telegram notifications when prices drop below thresholds.',
+                    tags: ['Automation', 'Web Scraping', 'Data Viz'],
+                    techs: ['Python', 'BeautifulSoup', 'Telegram API', 'SQLite', 'Schedule'],
+                    image: '/assets/img/portfolio1.jpg',
+                    demoLink: '#',
+                    codeLink: '#',
+                    features: [
+                        'Multi-site price tracking',
+                        'Telegram bot notifications',
+                        'Price history visualization',
+                        'Custom alert thresholds',
+                        'Scheduled monitoring'
+                    ]
+                }
+            };
+
+            // Load project data based on URL parameter
+            function loadProjectData() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const projectId = urlParams.get('id') || 'xscrapers';
+                const project = projectsData[projectId];
+
+                if (project) {
+                    // Update page content
+                    document.getElementById('project-title').textContent = project.title;
+                    document.getElementById('project-type').textContent = project.type;
+                    document.getElementById('project-date').textContent = project.date;
+                    document.getElementById('project-description').textContent = project.description;
+                    document.getElementById('project-image').src = project.image;
+                    document.getElementById('project-started').textContent = project.started;
+                    document.getElementById('project-duration').textContent = project.duration;
+                    document.getElementById('project-role').textContent = project.role;
+                    document.getElementById('project-team').textContent = project.team;
+
+                    // Update tags
+                    const tagsContainer = document.getElementById('project-tags');
+                    tagsContainer.innerHTML = project.tags.map(tag => 
+                        `<span class="project-hero__tag">${tag}</span>`
+                    ).join('');
+
+                    // Update techs
+                    const techsContainer = document.getElementById('project-techs');
+                    techsContainer.innerHTML = project.techs.map(tech => 
+                        `<span class="project-details__tech">${tech}</span>`
+                    ).join('');
+
+                    // Update features
+                    const featuresContainer = document.getElementById('project-features');
+                    featuresContainer.innerHTML = project.features.map(feature => 
+                        `<li><i class="uil uil-check-circle"></i> ${feature}</li>`
+                    ).join('');
+
+                    // Update page title
+                    document.title = `${project.title} - Portfolio`;
+                }
+            }
+
+            // Initialize
+            loadProjectData();
+        })();
+    </script>
+</body>
+
+</html>

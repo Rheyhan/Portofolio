@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Learn more about me - my background, interests, and what drives me.">
+    <meta name="keywords" content="About, Personal, Bio">
+
+    <!--==================== UNICONS ====================-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+
+    <!--==================== SWIPER CSS ====================-->
+    <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <title>About Me - Portfolio</title>
+
+    <!--==================== Favicon ====================-->
+    <link rel="shortcut icon" href="assets/img/Icon.png" type="image/png">
+
+    <!--==================== Animate on scroll CDN ====================-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">Who am i?</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__items">
+                        <a href="index.html" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+
+                    <li class="nav__items">
+                        <a href="about.html" class="nav__link active-link">
+                            <i class="uil uil-user nav__icon"></i> About
+                        </a>
+                    </li>
+
+                    <li class="nav__items">
+                        <a href="portfolio.html" class="nav__link">
+                            <i class="uil uil-briefcase-alt nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <button class="nav__music" id="music-toggle" type="button" aria-label="Play random music">
+                    <i class="uil uil-music"></i>
+                </button>
+
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <!--==================== HERO SECTION ====================-->
+        <section class="about-hero section section--full-bleed" id="about-hero">
+            <div class="about-hero__container container">
+                <div class="about-hero__content">
+                    <span class="about-hero__eyebrow" data-aos="fade-down">This is me</span>
+                    <h1 class="about-hero__title" data-aos="fade-down" data-aos-delay="100">I'm Rheyhan Fahry</h1>
+                    <p class="about-hero__bio" data-aos="fade-down" data-aos-delay="200">
+                        A data scientist with a burning passion for teaching computers how to think and act like humans do. I specialize in translating complex concepts into seamless automation that people can use and trust.
+                    </p>
+
+                    <div class="about-hero__tags" aria-hidden="false" data-aos="fade-down" data-aos-delay="300">
+                        <span class="about-hero__tag"><i class="uil uil-robot"></i> Machine Learning</span>
+                        <span class="about-hero__tag"><i class="uil uil-database"></i> Data Mining</span>
+                        <span class="about-hero__tag"><i class="uil uil-brain"></i> AI Enthusiast</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- visual separator between hero and story -->
+        <div class="section-sep section-sep--diagonal" id="hero-bio-sep" aria-hidden="true"></div>
+
+        <!--==================== MY STORY SECTION ====================-->
+        <section class="bio-section section" id="story">
+            <h2 class="section__title" data-aos="fade-up">My Story</h2>
+            <span class="section__subtitle" data-aos="fade-up">How I got here</span>
+
+            <div class="bio__container container bio__container--rows" data-aos="fade-up">
+                <div class="bio__card">
+                    <div class="bio__card-header">
+                        <div class="bio__card-icon">
+                            <i class="uil uil-book-open"></i>
+                        </div>
+                        <h3 class="bio__card-title">The Beginning</h3>
+                    </div>
+                    <div class="bio__card-text">
+                        <p>
+                            I started off programming when I was 17 years old. My first language was LUA. I was so fascinated by the idea of creating helpful tools that could give me an advantage over others in game.
+                        </p>
+                        <p>
+                            Over the years, I explored various programming languages and technologies, gradually deciding to focus on data science due to my study in Statistics. The ability to teach computers to learn from data and make what's seemingly intelligent decision over humans have fascinated me.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bio__card">
+                    <div class="bio__card-header">
+                        <div class="bio__card-icon">
+                            <i class="uil uil-rocket"></i>
+                        </div>
+                        <h3 class="bio__card-title">Where I Am Now</h3>
+                    </div>
+                    <div class="bio__card-text">
+                        <p>
+                            I just graduated from university in December 2025 and currently looking for a full-time position as a data scientist or anything related to machine learning and AI. 
+                            In the meantime, I am working on several personal projects to sharpen my skills and expand my portfolio.
+                        </p>
+                        <p>
+                            Solely focusing on data science and machine learning has allowed me to dive deep into the field, vouching knowledge and hands-on experience in building computer assisted tools. 
+                            However, I am always open to explore other fields in software development as well.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bio__card">
+                    <div class="bio__card-header">
+                        <div class="bio__card-icon">
+                            <i class="uil uil-compass"></i>
+                        </div>
+                        <h3 class="bio__card-title">Looking Forward</h3>
+                    </div>
+                    <div class="bio__card-text">
+                        <p>
+                            I aim to continuously grow as a data scientist and machine learning engineer, staying updated with the latest advancements in AI and related technologies.
+                        </p>
+                        <p>
+                            The current attention I'm staring at as of now is on large language models and generative AI.
+                            I believe these technologies have the potential to revolutionize how we interact with computers and access new information.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== INTERESTS SECTION ====================-->
+        <section class="interests-section section" id="interests">
+            <h2 class="section__title" data-aos="fade-up">My Interests</h2>
+            <span class="section__subtitle" data-aos="fade-up">What keeps me curious</span>
+
+            <div class="interests__grid container" data-aos="fade-up">
+                <div class="interest__card">
+                    <div class="interest__icon">
+                        <i class="uil uil-robot"></i>
+                    </div>
+                    <h3 class="interest__title">Artificial Intelligence</h3>
+                    <p class="interest__description">Exploring LLMs, neural networks, and the future of intelligent systems.</p>
+                </div>
+
+                <div class="interest__card">
+                    <div class="interest__icon">
+                        <i class="uil uil-chart-line"></i>
+                    </div>
+                    <h3 class="interest__title">Data Analytics</h3>
+                    <p class="interest__description">Turning raw data into actionable insights and compelling stories.</p>
+                </div>
+
+                <div class="interest__card">
+                    <div class="interest__icon">
+                        <i class="uil uil-code-branch"></i>
+                    </div>
+                    <h3 class="interest__title">Automation</h3>
+                    <p class="interest__description">Building tools that make repetitive tasks disappear.</p>
+                </div>
+
+                <div class="interest__card">
+                    <div class="interest__icon">
+                        <i class="uil uil-cloud-computing"></i>
+                    </div>
+                    <h3 class="interest__title">Cloud Computing</h3>
+                    <p class="interest__description">Deploying scalable solutions on GCP, AWS, and beyond.</p>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== FUN FACTS SECTION ====================-->
+        <section class="funfacts-section section" id="funfacts">
+            <h2 class="section__title" data-aos="fade-up">Fun Facts</h2>
+            <span class="section__subtitle" data-aos="fade-up">Quick bits about me</span>
+
+            <div class="funfacts__grid container" data-aos="fade-up">
+                <div class="funfact__item">
+                    <div class="funfact__number">5+</div>
+                    <div class="funfact__label">Years Coding</div>
+                </div>
+                <div class="funfact__item">
+                    <div class="funfact__number">15+</div>
+                    <div class="funfact__label">Projects Built</div>
+                </div>
+                <div class="funfact__item">
+                    <div class="funfact__number">10+</div>
+                    <div class="funfact__label">Certifications</div>
+                </div>
+                <div class="funfact__item">
+                    <div class="funfact__number">∞</div>
+                    <div class="funfact__label">Curiosity</div>
+                </div>
+            </div>
+        </section>
+        
+        <!--==================== CONTACT CTA SECTION ====================-->
+        <section class="contact-cta section" id="contact">
+            <div class="container" data-aos="fade-up">
+                <div class="contact-cta__card">
+                    <h2 class="contact-cta__title">Let's Connect!</h2>
+                    <p class="contact-cta__description">
+                        I'm always excited to meet new people, discuss ideas, or explore potential collaborations. 
+                        Feel free to reach out!
+                    </p>
+                    <div class="contact-cta__buttons">
+                        <a href="mailto:rheyhanfahry@gmail.com" class="contact-cta__btn contact-cta__btn--primary">
+                            <i class="uil uil-envelope"></i> Send an Email
+                        </a>
+                        <a href="https://www.linkedin.com/in/rheyhan-fahry/" target="_blank" rel="noopener" class="contact-cta__btn contact-cta__btn--secondary">
+                            <i class="uil uil-linkedin"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container">
+                <div class="footer__content">
+                    <!-- Brand -->
+                    <div class="footer__brand">
+                        <h2 class="footer__title">Rheyhan<br>Fahry.</h2>
+                    </div>
+
+                    <!-- Links Columns -->
+                    <div class="footer__columns">
+                        <!-- Explore Column -->
+                        <div class="footer__column">
+                            <h4 class="footer__column-title">Explore</h4>
+                            <nav class="footer__nav">
+                                <a href="index.html" class="footer__nav-link">Home</a>
+                                <a href="about.html" class="footer__nav-link">About</a>
+                                <a href="portfolio.html" class="footer__nav-link">Projects</a>
+                            </nav>
+                        </div>
+
+                        <!-- Connect Column -->
+                        <div class="footer__column">
+                            <h4 class="footer__column-title">Let's Connect</h4>
+                            <nav class="footer__nav">
+                                <a href="mailto:rheyhanfahry@gmail.com" class="footer__nav-link">Email</a>
+                                <a href="https://www.linkedin.com/in/rheyhan-fahry/" target="_blank" rel="noopener noreferrer" class="footer__nav-link">LinkedIn</a>
+                                <a href="https://github.com/Rheyhan" target="_blank" rel="noopener noreferrer" class="footer__nav-link">GitHub</a>
+                                <a href="https://www.instagram.com/rheyhan.fahry/" target="_blank" rel="noopener noreferrer" class="footer__nav-link">Instagram</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Row -->
+                <div class="footer__bottom">
+                    <p class="footer__copy">&copy; 2026</p>
+                    <p class="footer__copy">Rheyhan Fahry.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="/assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="assets/js/main.js"></script>
+
+    <!--=================== Animate scroll js ===============-->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 100,
+            duration: 1000
+        });
+    </script>
+    <script>
+        // Reveal bio section and animate separator
+        (function () {
+            var bio = document.getElementById('story');
+            var sep = document.getElementById('hero-bio-sep');
+            if (!bio) return;
+
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        bio.classList.add('is-revealed');
+                        if (sep) sep.classList.add('is-active');
+                        io.unobserve(bio);
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            io.observe(bio);
+        })();
+    </script>
+    <script>
+        // Header image -> solid transition (only for this page)
+        (function () {
+            var header = document.getElementById('header');
+            if (!header) return;
+
+            var hero = document.getElementById('about-hero');
+            var mq = window.matchMedia('(min-width: 768px)');
+            var lastY = 0;
+            var ticking = false;
+            var root = document.documentElement;
+            var initialOverlayAlpha = 0.6;
+
+            function applyHeaderImageState() {
+                if (mq.matches) header.classList.add('header--with-image');
+                else {
+                    header.classList.remove('header--with-image');
+                    header.style.backgroundColor = '';
+                    root.style.setProperty('--header-overlay-alpha', '');
+                }
+            }
+
+            function getHeroMetrics() {
+                if (!hero) return { heroTop: 0, heroHeight: 0, headerHeight: header.offsetHeight, threshold: 0 };
+                var heroTop = hero.getBoundingClientRect().top + window.pageYOffset;
+                var heroHeight = hero.offsetHeight;
+                var headerHeight = header.offsetHeight;
+                var threshold = heroTop + heroHeight - headerHeight;
+                return { heroTop: heroTop, heroHeight: heroHeight, headerHeight: headerHeight, threshold: threshold };
+            }
+
+            function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+
+            function updateVisuals() {
+                var m = getHeroMetrics();
+                var progress = 0;
+
+                if (mq.matches && hero) {
+                    if (lastY <= m.heroTop) progress = 0;
+                    else if (lastY >= m.threshold) progress = 1;
+                    else progress = (lastY - m.heroTop) / (m.threshold - m.heroTop);
+
+                    progress = clamp(progress, 0, 1);
+
+                    header.style.backgroundColor = 'rgba(255,255,255,' + progress + ')';
+
+                    var overlayAlpha = (1 - progress) * initialOverlayAlpha;
+                    root.style.setProperty('--header-overlay-alpha', overlayAlpha.toFixed(3));
+                } else {
+                    header.style.backgroundColor = '';
+                    root.style.setProperty('--header-overlay-alpha', initialOverlayAlpha.toFixed(3));
+                }
+
+                if (lastY > m.threshold) header.classList.add('scrolled'); else header.classList.remove('scrolled');
+            }
+
+            function onScroll() {
+                lastY = window.scrollY || window.pageYOffset;
+                if (!ticking) {
+                    window.requestAnimationFrame(function () {
+                        updateVisuals();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }
+
+            // read any existing CSS var to use as initial overlay alpha
+            var computed = getComputedStyle(root).getPropertyValue('--header-overlay-alpha');
+            if (computed) {
+                var parsed = parseFloat(computed);
+                if (!isNaN(parsed)) initialOverlayAlpha = parsed;
+            }
+
+            // Apply on load and whenever the viewport crosses the breakpoint
+            applyHeaderImageState();
+            if (mq.addEventListener) mq.addEventListener('change', function () { applyHeaderImageState(); updateVisuals(); });
+            else if (mq.addListener) mq.addListener(function () { applyHeaderImageState(); updateVisuals(); });
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', function () { onScroll(); }, { passive: true });
+
+            // initial update
+            onScroll();
+        })();
+    </script>
+</body>
+
+</html>
