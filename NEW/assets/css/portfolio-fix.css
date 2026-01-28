@@ -1,3 +1,4 @@
+/* Mobile: center the filters panel and keep spacing from viewport edges */
 /*
 =================================================================
  portfolio-fix.css -- Consolidated & Refactored Stylesheet
@@ -17,9 +18,41 @@
 /* =================================================================
    [1] BASE & LAYOUT
 ================================================================= */
+
+@media screen and (min-width: 1024px) {
+  .main{
+    padding: 5rem;
+  }
+}
+
 .container--full {
   width: 100%;
   max-width: 1600px;
+  
+  @media (max-width: 1023px) {
+    .portfolio__filters .portfolio__filters-content {
+      left: 50% !important;
+      transform: translateX(-50%) translateY(-8px) !important;
+      width: min(420px, 92%) !important;
+      max-width: 420px !important;
+      padding: 1rem !important;
+      box-sizing: border-box !important;
+      top: calc(var(--header-height) + 1rem) !important;
+      border-radius: .9rem !important;
+      opacity: 0; /* keep hidden until open */
+      transition: transform .26s cubic-bezier(.2,.85,.25,1), opacity .2s ease !important;
+    }
+
+    .portfolio__filters.is-open .portfolio__filters-content {
+      transform: translateX(-50%) translateY(0) !important;
+      opacity: 1 !important;
+    }
+
+    /* ensure mobile close button stays in the panel's top-right */
+    .portfolio__filters-close-mobile {
+      right: 0.75rem !important;
+    }
+  }
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -63,8 +96,6 @@
 ================================================================= */
 .portfolio__toolbar {
   padding: 1rem 0;
-  border-bottom: 1px solid var(--input-color);
-  background: var(--body-color);
   position: sticky;
   top: var(--header-height);
   z-index: 90;
@@ -641,7 +672,6 @@ body.dark-theme .portfolio__filter-badge {
 }
 
 body.dark-theme .portfolio__filters-content {
-  background: var(--body-color);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
@@ -686,7 +716,7 @@ body.dark-theme .portfolio__filters-close-mobile {
 /* Desktop (>1024px): expand search to fill available space and keep sort to the right */
 @media (min-width: 1025px) {
   .portfolio__toolbar-inner {
-
+    display: flex !important;
     align-items: center !important;
     gap: 1rem !important;
   }
@@ -713,4 +743,16 @@ body.dark-theme .portfolio__filters-close-mobile {
 
   /* Prevent filter button from creating extra space */
   .portfolio__filter-btn { flex: 0 0 auto !important; }
+}
+
+.portfolio__page-header{
+  padding: 2rem 0 2rem;
+}
+
+.portfolio__filter-title{
+  width: 100%;
+  font-size: var(--h3-font-size);
+  color: var(--title-color);
+  text-align: center;
+  cursor: default;
 }
